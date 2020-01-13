@@ -1,0 +1,40 @@
+{
+  "name": "iplaymusic-jonaswn",
+  "version": "1.0.0",
+  "description": "Opgaven går ud på at opsætte et website der primært er mobiltvenligt, og er drevet af en simpel datastruktur.\r Opgaven er tiltænkt som en **individuel opgave**, men I må selvfølgelig gerne vende ideer og koncepter med hinanden.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp dev",
+    "build": "build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rts-cmk-wuhf02/iplaymusic-JonasWN.git"
+  },
+  "author": "jonas wn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rts-cmk-wuhf02/iplaymusic-JonasWN/issues"
+  },
+  "homepage": "https://github.com/rts-cmk-wuhf02/iplaymusic-JonasWN#readme",
+  "dependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-ejs": "^4.1.2",
+    "gulp-imagemin": "^6.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.0"
+  }
+}
