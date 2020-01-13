@@ -1,0 +1,51 @@
+@import "base";
+
+.body {
+    background: $dark-mode-color;
+    height: 100vh;
+
+    .wrapper {
+        padding: 25px;
+    }
+}
+
+.title__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: $light-mode-color;
+}
+
+.Title__heading {
+    font-size: 2em;
+    background: $gradient-color;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    padding: 30px 0 20px 0;
+}
+
+.main__img {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto 30px auto;
+
+    .main__img_title {
+        position: absolute;
+        top: 50%;
+        left: 15%;
+        width: 60%;
+
+        color: $light-mode-color;
+        font-size: 2em;
+    }
+
+    .main__img_p {
+        position: absolute;
+        top: 75%;
+        left: 15%;
+
+        color: $light-mode-color;
+    }
+}
