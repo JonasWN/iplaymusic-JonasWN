@@ -9,6 +9,10 @@
     }
 }
 
+.index__Main {
+    margin-bottom: 15vh;
+}
+
 .title__list {
     display: flex;
     justify-content: space-between;
@@ -31,10 +35,14 @@
     max-width: 400px;
     margin: 0 auto 30px auto;
 
-    .main__img_title {
+    .main__imgTexts {
         position: absolute;
-        top: 50%;
-        left: 15%;
+        top: 40%;
+        left: 10%;
+    }
+
+    .main__img_title {
+
         width: 60%;
 
         color: $light-mode-color;
@@ -42,10 +50,34 @@
     }
 
     .main__img_p {
-        position: absolute;
-        top: 75%;
-        left: 15%;
 
         color: $light-mode-color;
+    }
+}
+
+.nav__search {
+    width: 30px;
+}
+
+.nav__arrow {
+    width: 20px;
+}
+
+.active__footer {
+    fill: #fff;
+    background: #fff;
+}
+
+@media screen and (max-width: 300px) {
+    .main__img {
+        position: relative;
+        max-width: 400px;
+        margin: 0 auto 30px auto;
+
+        .main__imgTexts {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+        }
     }
 }
