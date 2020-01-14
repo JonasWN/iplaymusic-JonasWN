@@ -22,6 +22,16 @@ $dark-green: #3A7634;
 $dark-red: #E54028;
 
 
+/* Font-sizes */
+
+$headline-1: 48pt;
+$headline-2: 36pt;
+$headline-3: 32pt;
+$headline-4: 24pt;
+$headline-5: 20pt;
+$headline-6: 15pt;
+
+
 * {
     padding: 0;
     margin: 0;
@@ -36,5 +46,13 @@ $dark-red: #E54028;
 img {
     width: 100%;
     height: auto;
+    display: block;
+}
 
+a {
+    text-decoration: none;
+
+    &:hover {
+        cursor: pointer;
+    }
 }

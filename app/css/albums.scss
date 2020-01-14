@@ -1,0 +1,70 @@
+@import "base";
+
+.title__smallHeading {
+    display: flex;
+    justify-content: space-between;
+
+    .title__viewAll {
+        color: $primary-color;
+    }
+
+    .title__h2 {
+        color: $light-mode-color;
+
+        font-size: $headline-6;
+    }
+}
+
+
+.gallery__section {
+
+    margin: 30px 0;
+
+    .gallery__list {
+        display: flex;
+        overflow-x: auto;
+        min-width: 100%;
+
+
+        .gallery__item {
+            min-width: 150px;
+            height: 130px;
+            overflow: hidden;
+            margin-right: 10px;
+            border-radius: 10px;
+        }
+    }
+}
+
+.main__albumList {
+
+    margin-bottom: 10vh;
+
+    .main__item {
+        display: flex;
+        color: $light-mode-color;
+
+        margin: 25px 0;
+
+        .main__imgText {
+            display: flex;
+            flex-direction: column;
+            margin-left: 15px;
+            justify-content: space-evenly;
+
+            .main__itemHeader {
+                font-weight: 800;
+                font-size: $headline-6;
+            }
+        }
+
+        .main__thumb {
+            width: 70px;
+            height: 70px;
+        }
+
+        .main__songCount {
+            margin-left: auto;
+        }
+    }
+}

@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap");
 /* Main-Colors */
 /* Additional-Colors */
+/* Font-sizes */
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap");
 * {
@@ -14,10 +17,17 @@
 
 img {
   width: 100%;
-  height: auto; }
+  height: auto;
+  display: block; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    cursor: pointer; }
 
 /* Main-Colors */
 /* Additional-Colors */
+/* Font-sizes */
 * {
   padding: 0;
   margin: 0;
@@ -29,7 +39,13 @@ img {
 
 img {
   width: 100%;
-  height: auto; }
+  height: auto;
+  display: block; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    cursor: pointer; }
 
 .body {
   background: #341931;
@@ -44,7 +60,7 @@ img {
   color: #fff; }
 
 .Title__heading {
-  font-size: 2em;
+  font-size: 32pt;
   background: linear-gradient(to right, #ee0979, #fc1c62, #ff364a, #ff512f, #ff6a00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -69,6 +85,7 @@ img {
 
 /* Main-Colors */
 /* Additional-Colors */
+/* Font-sizes */
 * {
   padding: 0;
   margin: 0;
@@ -80,7 +97,13 @@ img {
 
 img {
   width: 100%;
-  height: auto; }
+  height: auto;
+  display: block; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    cursor: pointer; }
 
 .footer__fixed {
   background: #111625;
@@ -106,3 +129,94 @@ img {
       width: 30px;
       height: 30px;
       object-fit: none; }
+
+/* Main-Colors */
+/* Additional-Colors */
+/* Font-sizes */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; }
+
+.ul {
+  list-style: none; }
+
+img {
+  width: 100%;
+  height: auto;
+  display: block; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    cursor: pointer; }
+
+.title__smallHeading {
+  display: flex;
+  justify-content: space-between; }
+  .title__smallHeading .title__viewAll {
+    color: #FF1168; }
+  .title__smallHeading .title__h2 {
+    color: #fff;
+    font-size: 15pt; }
+
+.gallery__section {
+  margin: 30px 0; }
+  .gallery__section .gallery__list {
+    display: flex;
+    overflow-x: auto;
+    min-width: 100%; }
+    .gallery__section .gallery__list .gallery__item {
+      min-width: 150px;
+      height: 130px;
+      overflow: hidden;
+      margin-right: 10px;
+      border-radius: 10px; }
+
+.main__albumList {
+  margin-bottom: 10vh; }
+  .main__albumList .main__item {
+    display: flex;
+    color: #fff;
+    margin: 25px 0; }
+    .main__albumList .main__item .main__imgText {
+      display: flex;
+      flex-direction: column;
+      margin-left: 15px;
+      justify-content: space-evenly; }
+      .main__albumList .main__item .main__imgText .main__itemHeader {
+        font-weight: 800;
+        font-size: 15pt; }
+    .main__albumList .main__item .main__thumb {
+      width: 70px;
+      height: 70px; }
+    .main__albumList .main__item .main__songCount {
+      margin-left: auto; }
+
+/* Main-Colors */
+/* Additional-Colors */
+/* Font-sizes */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; }
+
+.ul {
+  list-style: none; }
+
+img {
+  width: 100%;
+  height: auto;
+  display: block; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    cursor: pointer; }
+
+.Title__heading_white {
+  color: #fff;
+  font-size: 32pt;
+  padding: 30px 0 20px 0; }
