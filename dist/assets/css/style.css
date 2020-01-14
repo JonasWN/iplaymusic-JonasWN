@@ -12,7 +12,7 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif; }
 
-.ul {
+ul {
   list-style: none; }
 
 img {
@@ -34,7 +34,7 @@ a {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif; }
 
-.ul {
+ul {
   list-style: none; }
 
 img {
@@ -92,7 +92,7 @@ a {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif; }
 
-.ul {
+ul {
   list-style: none; }
 
 img {
@@ -126,8 +126,8 @@ a {
     .footer__fixed .footer__list .wifi__icon img {
       background: linear-gradient(to right, #ee0979, #fc1c62, #ff364a, #ff512f, #ff6a00);
       border-radius: 50%;
-      width: 30px;
-      height: 30px;
+      width: 50px;
+      height: 50px;
       object-fit: none; }
 
 /* Main-Colors */
@@ -139,7 +139,7 @@ a {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif; }
 
-.ul {
+ul {
   list-style: none; }
 
 img {
@@ -203,7 +203,7 @@ a {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif; }
 
-.ul {
+ul {
   list-style: none; }
 
 img {
@@ -216,7 +216,66 @@ a {
   a:hover {
     cursor: pointer; }
 
+.nopadding__header {
+  margin: -25px;
+  padding: 25px;
+  background: url("/assets/images/pexels-photo-1771305.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
 .Title__heading_white {
   color: #fff;
-  font-size: 32pt;
+  font-size: 24pt;
   padding: 30px 0 20px 0; }
+
+.header__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: contrast(1.2);
+  width: 100%; }
+
+.title__hashtagSection {
+  color: #fff;
+  margin-top: 50%; }
+  .title__hashtagSection .title__genreText {
+    margin: 20% 0 20px 0; }
+  .title__hashtagSection .hashtagSection__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+    grid-gap: 20px 5px; }
+    .title__hashtagSection .hashtagSection__list .hashtagSection__item {
+      width: 100px;
+      height: 42px;
+      background: #FF1168;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600; }
+
+.main__songs {
+  margin-top: 10vh;
+  color: #fff; }
+
+@media screen and (max-width: 350px) {
+  .title__hashtagSection {
+    color: #fff;
+    margin-top: 0%; }
+    .title__hashtagSection .title__genreText {
+      margin: 0% 0 20px 0; }
+    .title__hashtagSection .hashtagSection__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+      grid-gap: 20px 0; }
+      .title__hashtagSection .hashtagSection__list .hashtagSection__item {
+        width: 100px;
+        height: 42px;
+        background: #FF1168;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600; } }

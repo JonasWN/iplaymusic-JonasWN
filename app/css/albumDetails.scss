@@ -1,7 +1,95 @@
 @import "base";
 
+.nopadding__header {
+    margin: -25px;
+    padding: 25px;
+
+    background: url("/assets/images/pexels-photo-1771305.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
 .Title__heading_white {
     color: $light-mode-color;
-    font-size: $headline-3;
+    font-size: $headline-4;
     padding: 30px 0 20px 0;
+}
+
+.header__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: contrast(1.2);
+    width: 100%;
+}
+
+.title__hashtagSection {
+    color: $light-mode-color;
+    margin-top: 50%;
+
+    .title__genreText {
+        margin: 20% 0 20px 0;
+    }
+
+    .hashtagSection__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+        grid-gap: 20px 5px;
+
+        .hashtagSection__item {
+            width: 100px;
+            height: 42px;
+            background: $primary-color;
+
+            border-radius: 20px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            font-weight: 600;
+        }
+    }
+}
+
+.main__songs {
+    margin-top: 10vh;
+    color: $light-mode-color;
+}
+
+
+@media screen and (max-width: 350px) {
+    .title__hashtagSection {
+        color: $light-mode-color;
+        margin-top: 0%;
+
+        .title__genreText {
+            margin: 0% 0 20px 0;
+        }
+
+        .hashtagSection__list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+            grid-gap: 20px 0;
+
+            .hashtagSection__item {
+                width: 100px;
+                height: 42px;
+                background: $primary-color;
+
+                border-radius: 20px;
+
+                display: flex;
+
+                justify-content: center;
+                align-items: center;
+
+                font-weight: 600;
+            }
+        }
+    }
 }
