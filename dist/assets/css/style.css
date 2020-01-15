@@ -345,6 +345,9 @@ a {
   a:hover {
     cursor: pointer; }
 
+.title__categories {
+  font-size: inherit; }
+
 details {
   margin: 1rem auto;
   width: 100%;
