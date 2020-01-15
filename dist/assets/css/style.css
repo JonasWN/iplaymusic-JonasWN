@@ -7,6 +7,7 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -443,3 +444,73 @@ summary {
 
 .details__summary_blue {
   background: #115793; }
+
+/* Main-Colors */
+/* Additional-Colors */
+/* Font-sizes */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; }
+
+ul {
+  list-style: none; }
+
+img {
+  width: 100%;
+  height: auto;
+  display: block; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    cursor: pointer; }
+
+.title__vectorGraphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 40vh; }
+
+.playlist__galleryList {
+  display: flex;
+  align-items: center;
+  margin: 20px -25px 0 -25px;
+  justify-content: space-between;
+  overflow: hidden; }
+  .playlist__galleryList .playlist__galleryitem img {
+    filter: contrast(1.2); }
+  .playlist__galleryList .playlist__galleryitem_left {
+    transform: translateX(-40px);
+    filter: contrast(1.2); }
+  .playlist__galleryList .playlist__galleryitem_right {
+    transform: translateX(40px);
+    filter: contrast(1.2); }
+
+.main__playList {
+  margin-top: 30px; }
+  .main__playList .main__title_playlist {
+    text-align: center;
+    margin-bottom: 40px; }
+
+.main__itemText {
+  font-size: 12px; }
+
+.main__thumb {
+  object-fit: contain; }
+
+@media screen and (min-width: 500px) {
+  .playlist__galleryList {
+    display: flex;
+    align-items: center;
+    margin: 20px 0px 0 0px;
+    justify-content: space-between;
+    overflow: hidden;
+    width: 70%;
+    margin: 20px auto 0 auto; }
+    .playlist__galleryList .playlist__galleryitem_left {
+      transform: translateX(0px); }
+    .playlist__galleryList .playlist__galleryitem_right {
+      transform: translateX(0px); } }
