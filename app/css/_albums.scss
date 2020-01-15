@@ -69,17 +69,19 @@
 
             .main__itemHeader {
                 font-weight: 800;
-                font-size: $headline-6;
             }
         }
 
         .main__thumb {
             width: 70px;
             height: 70px;
+            min-width: 50px;
+            align-self: center
         }
 
         .main__songCount {
             margin-left: auto;
+            align-self: center;
         }
     }
 }

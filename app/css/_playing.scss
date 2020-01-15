@@ -1,0 +1,42 @@
+@import "base";
+
+.playing {
+    background: url("/assets/images/pexels-photo-1771305.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.main__playingIcon {
+
+    .main__centerIcon {
+        width: 100%;
+        filter: contrast(1.2);
+    }
+}
+
+.sectionSlider {
+
+    .sectionSlider__title {
+        color: $light-mode-color;
+        text-align: center;
+    }
+}
+
+
+.footerPlayOptions {
+
+    .footerPlayOptions__list {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .playButton {
+        width: 40px;
+        height: 40px;
+
+        path {}
+    }
+}

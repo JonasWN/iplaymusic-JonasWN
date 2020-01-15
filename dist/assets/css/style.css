@@ -8,6 +8,7 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -50,7 +51,7 @@ a {
     cursor: pointer; }
 
 .body {
-  background: #341931;
+  background: #191934;
   height: 100vh; }
   .body .wrapper {
     padding: 25px; }
@@ -222,13 +223,15 @@ a {
       margin-left: 15px;
       justify-content: space-evenly; }
       .main__albumList .main__item .main__imgText .main__itemHeader {
-        font-weight: 800;
-        font-size: 15pt; }
+        font-weight: 800; }
     .main__albumList .main__item .main__thumb {
       width: 70px;
-      height: 70px; }
+      height: 70px;
+      min-width: 50px;
+      align-self: center; }
     .main__albumList .main__item .main__songCount {
-      margin-left: auto; }
+      margin-left: auto;
+      align-self: center; }
 
 /* Main-Colors */
 /* Additional-Colors */
@@ -514,3 +517,49 @@ a {
       transform: translateX(0px); }
     .playlist__galleryList .playlist__galleryitem_right {
       transform: translateX(0px); } }
+
+/* Main-Colors */
+/* Additional-Colors */
+/* Font-sizes */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; }
+
+ul {
+  list-style: none; }
+
+img {
+  width: 100%;
+  height: auto;
+  display: block; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    cursor: pointer; }
+
+.playing {
+  background: url("/assets/images/pexels-photo-1771305.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+
+.main__playingIcon .main__centerIcon {
+  width: 100%;
+  filter: contrast(1.2); }
+
+.sectionSlider .sectionSlider__title {
+  color: #fff;
+  text-align: center; }
+
+.footerPlayOptions .footerPlayOptions__list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; }
+
+.footerPlayOptions .playButton {
+  width: 40px;
+  height: 40px; }
