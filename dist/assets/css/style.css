@@ -140,7 +140,7 @@ a {
     cursor: pointer; }
 
 .footer__fixed {
-  background: #111625;
+  background: var(--bg-color);
   position: fixed;
   height: 70px;
   bottom: 0;

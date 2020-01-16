@@ -1,7 +1,7 @@
 @import "base";
 
 .footer__fixed {
-    background: $additional-color;
+    background: var(--bg-color);
     position: fixed;
 
     height: 70px;
