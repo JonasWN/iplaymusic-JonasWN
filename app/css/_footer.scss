@@ -26,15 +26,27 @@
             object-fit: contain;
         }
 
-
-        .wifi__icon img {
-            background: $gradient-color;
+        .wifi__icon {
             border-radius: 50%;
-
             width: 50px;
             height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #ee0979, #fc1c62, #ff364a, #ff512f, #ff6a00);
+        }
 
-            object-fit: none;
+        .wifi__icon svg {
+            margin-top: 7px;
+
+            path {
+                height: 40px;
+                fill: var(--bg-color);
+            }
         }
     }
+}
+
+.footer__current {
+    fill: var(--font-color);
 }

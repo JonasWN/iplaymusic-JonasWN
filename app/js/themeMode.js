@@ -28,3 +28,17 @@ if (currentTheme) {
         toggle.checked = true;
     }
 }
+
+
+
+// icons current color 
+// const footerIcons = document.querySelectorAll(".footer__item");
+
+
+// footerIcons.forEach(icon => {
+//     icon.addEventListener("click", () => {
+//         icon.classList.add("footer__current");
+
+//         console.log("clicked")
+//     })
+// })

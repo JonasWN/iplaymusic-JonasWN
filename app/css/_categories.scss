@@ -84,7 +84,7 @@ summary {
 
 
 #_ionicons_svg_ios-arrow-forward {
-    fill: #fff;
+    fill: var(--font-color);
     height: 15px;
 }
 
@@ -95,7 +95,7 @@ summary {
 
 .summary__list {
     background: rgba(0, 0, 0, 0);
-    color: $light-mode-color;
+    color: var(--font-color);
 
     padding: 10% 8% 4% 8%;
 

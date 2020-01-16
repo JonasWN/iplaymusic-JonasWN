@@ -70,6 +70,8 @@ a {
   .title__list .nav-icons {
     fill: var(--font-color);
     font-size: 24pt; }
+  .title__list .details__nav {
+    fill: #fff; }
   .title__list .playlistTitle__white {
     color: #fff; }
   .title__list .albumdetailsTitle__white {
@@ -157,12 +159,22 @@ a {
       width: 30px;
       height: 30px;
       object-fit: contain; }
-    .footer__fixed .footer__list .wifi__icon img {
-      background: linear-gradient(to right, #ee0979, #fc1c62, #ff364a, #ff512f, #ff6a00);
+    .footer__fixed .footer__list .wifi__icon {
       border-radius: 50%;
       width: 50px;
       height: 50px;
-      object-fit: none; }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right, #ee0979, #fc1c62, #ff364a, #ff512f, #ff6a00); }
+    .footer__fixed .footer__list .wifi__icon svg {
+      margin-top: 7px; }
+      .footer__fixed .footer__list .wifi__icon svg path {
+        height: 40px;
+        fill: var(--bg-color); }
+
+.footer__current {
+  fill: var(--font-color); }
 
 /* Main-Colors */
 /* Additional-Colors */
@@ -194,6 +206,8 @@ a {
   .title__smallHeading .title__h2 {
     color: var(--font-color);
     font-size: 15pt; }
+  .title__smallHeading .albumDetailsh2__white {
+    color: #fff; }
 
 .gallery__section {
   margin: 30px 0; }
@@ -415,7 +429,7 @@ summary {
     display: none; }
 
 #_ionicons_svg_ios-arrow-forward {
-  fill: #fff;
+  fill: var(--font-color);
   height: 15px; }
 
 .arrow__svg {
@@ -424,7 +438,7 @@ summary {
 
 .summary__list {
   background: rgba(0, 0, 0, 0);
-  color: #fff;
+  color: var(--font-color);
   padding: 10% 8% 4% 8%;
   font-size: 15pt; }
   .summary__list .summary__item {
