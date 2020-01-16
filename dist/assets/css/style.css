@@ -229,6 +229,8 @@ a {
       height: 70px;
       min-width: 50px;
       align-self: center; }
+    .main__albumList .main__item .noObject-fit {
+      object-fit: initial; }
     .main__albumList .main__item .main__songCount {
       margin-left: auto;
       align-self: center; }
@@ -346,7 +348,7 @@ a {
     cursor: pointer; }
 
 .title__categories {
-  font-size: inherit; }
+  font-size: 25pt; }
 
 details {
   margin: 1rem auto;

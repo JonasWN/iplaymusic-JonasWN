@@ -85,8 +85,7 @@ const images = done => {
 
 const watchHtml = () => {
   gulp.watch(
-    "./app/html/**/*.ejs",
-    {
+    "./app/html/**/*.ejs", {
       ignoreInitial: false
     },
     html
@@ -97,8 +96,7 @@ const watchHtml = () => {
 
 const watchScss = () => {
   gulp.watch(
-    "./app/css/**/*.scss",
-    {
+    "./app/css/**/*.scss", {
       ignoreInitial: false
     },
     scss
@@ -109,8 +107,7 @@ const watchScss = () => {
 
 const watchJavascript = () => {
   gulp.watch(
-    "./app/js/**/*.js",
-    {
+    "./app/js/**/*.js", {
       ignoreInitial: false
     },
     javascript
@@ -121,8 +118,7 @@ const watchJavascript = () => {
 
 const watchJson = () => {
   gulp.watch(
-    "./app/json/*.json",
-    {
+    "./app/json/*.json", {
       ignoreInitial: false
     },
     json
@@ -133,8 +129,7 @@ const watchJson = () => {
 
 const watchImages = () => {
   gulp.watch(
-    "./app/images/**/**",
-    {
+    "./app/images/**/**", {
       ignoreInitial: false
     },
     images
