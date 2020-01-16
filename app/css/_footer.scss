@@ -36,6 +36,10 @@
             background: linear-gradient(to right, #ee0979, #fc1c62, #ff364a, #ff512f, #ff6a00);
         }
 
+        .wifi__current {
+            background: var(--font-color);
+        }
+
         .wifi__icon svg {
             margin-top: 7px;
 

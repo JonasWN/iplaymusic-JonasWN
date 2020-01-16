@@ -167,6 +167,8 @@ a {
       justify-content: center;
       align-items: center;
       background: linear-gradient(to right, #ee0979, #fc1c62, #ff364a, #ff512f, #ff6a00); }
+    .footer__fixed .footer__list .wifi__current {
+      background: var(--font-color); }
     .footer__fixed .footer__list .wifi__icon svg {
       margin-top: 7px; }
       .footer__fixed .footer__list .wifi__icon svg path {
