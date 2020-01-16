@@ -51,7 +51,7 @@ a {
     cursor: pointer; }
 
 .body {
-  background: #191934;
+  background: var(--bg-color);
   height: 100vh; }
   .body .wrapper {
     padding: 25px; }
@@ -63,7 +63,17 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #fff; }
+  color: var(--font-color); }
+  .title__list svg {
+    height: 30px;
+    width: 30px; }
+  .title__list .nav-icons {
+    fill: var(--font-color);
+    font-size: 24pt; }
+  .title__list .playlistTitle__white {
+    color: #fff; }
+  .title__list .albumdetailsTitle__white {
+    color: #fff; }
 
 .Title__heading {
   font-size: 32pt;
@@ -182,7 +192,7 @@ a {
   .title__smallHeading .title__viewAll {
     color: #FF1168; }
   .title__smallHeading .title__h2 {
-    color: #fff;
+    color: var(--font-color);
     font-size: 15pt; }
 
 .gallery__section {
@@ -215,7 +225,7 @@ a {
   margin-bottom: 10vh; }
   .main__albumList .main__item {
     display: flex;
-    color: #fff;
+    color: var(--font-color);
     margin: 25px 0; }
     .main__albumList .main__item .main__imgText {
       display: flex;
@@ -501,7 +511,8 @@ a {
   margin-top: 30px; }
   .main__playList .main__title_playlist {
     text-align: center;
-    margin-bottom: 40px; }
+    margin-bottom: 40px;
+    color: var(--font-color); }
 
 .main__itemText {
   font-size: 12px; }
@@ -568,3 +579,15 @@ a {
 .footerPlayOptions .playButton {
   width: 40px;
   height: 40px; }
+
+:root {
+  --primary-color: #FF1168;
+  --font-color: #fff;
+  --bg-color: #191934;
+  --heading-color: linear-gradient(to right, #ee0979, #fc1c62, #ff364a, #ff512f, #ff6a00); }
+
+[data-theme="light"] {
+  --primary-color: #FF1168;
+  --font-color: #341931;
+  --bg-color: #fff;
+  --heading-color: linear-gradient(to right, #ee0979, #fc1c62, #ff364a, #ff512f, #ff6a00); }

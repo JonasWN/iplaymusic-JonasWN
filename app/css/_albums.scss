@@ -9,7 +9,7 @@
     }
 
     .title__h2 {
-        color: $light-mode-color;
+        color: var(--font-color);
 
         font-size: $headline-6;
     }
@@ -57,7 +57,7 @@
 
     .main__item {
         display: flex;
-        color: $light-mode-color;
+        color: var(--font-color);
 
         margin: 25px 0;
 

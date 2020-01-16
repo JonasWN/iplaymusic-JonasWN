@@ -1,7 +1,7 @@
 @import "base";
 
 .body {
-    background: $dark-mode-color;
+    background: var(--bg-color);
     height: 100vh;
 
     .wrapper {
@@ -18,7 +18,25 @@
     justify-content: space-between;
     align-items: center;
 
-    color: $light-mode-color;
+    color: var(--font-color);
+
+    svg {
+        height: 30px;
+        width: 30px;
+    }
+
+    .nav-icons {
+        fill: var(--font-color);
+        font-size: $headline-4;
+    }
+
+    .playlistTitle__white {
+        color: #fff;
+    }
+
+    .albumdetailsTitle__white {
+        color: #fff;
+    }
 }
 
 .Title__heading {
