@@ -3,6 +3,7 @@
 .body {
     background: var(--bg-color);
     height: 100vh;
+    transition: all 200ms linear;
 
     .wrapper {
         padding: 25px;

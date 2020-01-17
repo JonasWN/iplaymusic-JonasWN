@@ -6,6 +6,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    overflow: hidden;
 }
 
 .main__playingIcon {
@@ -81,6 +82,43 @@
 
         path {
             fill: $primary-color;
+        }
+    }
+}
+
+@media screen and (max-height: 470px) {
+    .sectionSlider {
+
+
+        .sectionSlider__title {
+            color: $light-mode-color;
+            text-align: center;
+
+            .title__heading {
+                font-size: $headline-6;
+            }
+        }
+
+        .sectionSlider__slider {
+            width: 100%;
+            height: 3px;
+
+            background: $primary-color;
+
+            margin: 15px 0;
+
+            position: relative;
+        }
+
+        .sectionSlider__songLength {
+            margin: 0;
+        }
+    }
+
+    .main__playingIcon {
+
+        .main__centerIcon {
+            height: 40vh;
         }
     }
 }

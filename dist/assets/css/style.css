@@ -52,7 +52,8 @@ a {
 
 .body {
   background: var(--bg-color);
-  height: 100vh; }
+  height: 100vh;
+  transition: all 200ms linear; }
   .body .wrapper {
     padding: 25px; }
 
@@ -147,7 +148,9 @@ a {
   height: 70px;
   bottom: 0;
   left: 0;
-  width: 100%; }
+  width: 100%;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: all 200ms linear; }
   .footer__fixed .footer__list {
     display: flex;
     width: 80%;
@@ -166,7 +169,8 @@ a {
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(to right, #ee0979, #fc1c62, #ff364a, #ff512f, #ff6a00); }
+      background: linear-gradient(to right, #ee0979, #fc1c62, #ff364a, #ff512f, #ff6a00);
+      transition: all 400ms linear; }
     .footer__fixed .footer__list .wifi__current {
       background: var(--font-color); }
     .footer__fixed .footer__list .wifi__icon svg {
@@ -175,8 +179,111 @@ a {
         height: 40px;
         fill: var(--bg-color); }
 
+#themeSwitch {
+  transition: all .4s linear; }
+
 .footer__current {
   fill: var(--font-color); }
+
+.jello-horizontal {
+  -webkit-animation: jello-horizontal 0.9s both;
+  animation: jello-horizontal 0.9s both; }
+
+.jello-vertical {
+  -webkit-animation: jello-vertical 0.9s both;
+  animation: jello-vertical 0.9s both; }
+
+@-webkit-keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1); }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1); }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1); }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1); }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1); }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+
+@keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1); }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1); }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1); }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1); }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1); }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+
+@-webkit-keyframes jello-vertical {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  30% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1); }
+  40% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1); }
+  50% {
+    -webkit-transform: scale3d(0.85, 1.15, 1);
+    transform: scale3d(0.85, 1.15, 1); }
+  65% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1); }
+  75% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1); }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+
+@keyframes jello-vertical {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  30% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1); }
+  40% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1); }
+  50% {
+    -webkit-transform: scale3d(0.85, 1.15, 1);
+    transform: scale3d(0.85, 1.15, 1); }
+  65% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1); }
+  75% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1); }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
 
 /* Main-Colors */
 /* Additional-Colors */
@@ -395,7 +502,6 @@ details {
     left: 0;
     border-radius: inherit;
     opacity: .15;
-    box-shadow: 0 .25em .5em #263238;
     pointer-events: none;
     transition: opacity .2s;
     z-index: -1; }
@@ -412,6 +518,8 @@ summary {
   cursor: pointer;
   background: #fff;
   color: #fff; }
+  summary:focus {
+    outline: none; }
   summary::before, summary::after {
     width: .75em;
     height: 2px;
@@ -431,7 +539,7 @@ summary {
     display: none; }
 
 #_ionicons_svg_ios-arrow-forward {
-  fill: var(--font-color);
+  fill: #341931ba;
   height: 15px; }
 
 .arrow__svg {
@@ -550,6 +658,21 @@ a {
     .playlist__galleryList .playlist__galleryitem_right {
       transform: translateX(0px); } }
 
+.listenAll__button {
+  width: 100%;
+  height: 60px;
+  border: 1px solid #FF1168;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0);
+  border: 2px solid #FF1168;
+  margin: 20px 0; }
+  .listenAll__button:focus {
+    outline: none; }
+  .listenAll__button .main__listenAll {
+    color: #FF1168;
+    font-size: 15pt;
+    font-weight: 600; }
+
 /* Main-Colors */
 /* Additional-Colors */
 /* Font-sizes */
@@ -577,7 +700,8 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  overflow: hidden; }
 
 .main__playingIcon .main__centerIcon {
   width: 100%;
@@ -624,6 +748,23 @@ a {
   height: 50px; }
   .footerPlayOptions .playButton path {
     fill: #FF1168; }
+
+@media screen and (max-height: 470px) {
+  .sectionSlider .sectionSlider__title {
+    color: #fff;
+    text-align: center; }
+    .sectionSlider .sectionSlider__title .title__heading {
+      font-size: 15pt; }
+  .sectionSlider .sectionSlider__slider {
+    width: 100%;
+    height: 3px;
+    background: #FF1168;
+    margin: 15px 0;
+    position: relative; }
+  .sectionSlider .sectionSlider__songLength {
+    margin: 0; }
+  .main__playingIcon .main__centerIcon {
+    height: 40vh; } }
 
 :root {
   --primary-color: #FF1168;
