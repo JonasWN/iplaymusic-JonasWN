@@ -13,7 +13,7 @@
     .main__centerIcon {
         width: 100%;
         filter: contrast(1.2);
-        height: 330px;
+        height: 50vh;
     }
 }
 
@@ -49,7 +49,22 @@
 
         margin-bottom: 15px;
     }
+
+    .thump__svg {
+        position: absolute;
+
+        left: 124px;
+        top: -9px;
+    }
+
+    .thumb__innerthumb {
+        position: absolute;
+
+        left: 130px;
+        top: -4px;
+    }
 }
+
 
 
 .footerPlayOptions {
