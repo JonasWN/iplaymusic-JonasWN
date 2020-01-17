@@ -84,14 +84,13 @@
     border: 2px solid $primary-color;
 
     margin: 20px 0;
+    color: $primary-color;
+    font-size: $headline-6;
+    font-weight: 600;
 
     &:focus {
         outline: none;
     }
 
-    .main__listenAll {
-        color: $primary-color;
-        font-size: $headline-6;
-        font-weight: 600;
-    }
+    .main__listenAll {}
 }

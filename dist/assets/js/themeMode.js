@@ -1,45 +1,53 @@
 const toggle = document.querySelector("#themeSwitch");
 
 const switchTheme = e => {
+  if (toggle.classList.contains("darkMode")) {
+    document.documentElement.setAttribute("data-theme", "light");
 
-    if (e.target.classList == "darkMode") {
-        document.documentElement.setAttribute("data-theme", "light");
-        e.target.classList.remove("darkMode");
+    toggle.classList.remove("darkMode");
 
-        toggle.classList.toggle("jello-horizontal");
-        localStorage.setItem('theme', 'light');
+    localStorage.setItem("theme", "light");
+    toggle.classList.add("jello-horizontal");
 
-        console.log("light-mode")
-    } else {
-        document.documentElement.setAttribute("data-theme", "dark");
-        e.target.classList.add("darkMode");
+    setTimeout(() => {
+      toggle.classList.remove("jello-horizontal");
+    }, 600);
 
-        toggle.classList.remove("jello-horizontal");
-        toggle.classList.toggle("jello-vertical");
-        localStorage.setItem('theme', 'dark');
+    console.log("light-mode");
+  } else {
+    document.documentElement.setAttribute("data-theme", "dark");
 
-        console.log("dark-mode")
-    }
-}
+    toggle.classList.add("darkMode");
+
+    localStorage.setItem("theme", "dark");
+    toggle.classList.add("jello-horizontal");
+    setTimeout(() => {
+      toggle.classList.remove("jello-horizontal");
+    }, 600);
+
+    console.log("dark-mode");
+    console.log(e.target);
+  }
+};
 
 if (toggle) {
-    toggle.addEventListener("click", switchTheme, false);
+  toggle.addEventListener("click", switchTheme, false);
 
-    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  const currentTheme = localStorage.getItem("theme")
+    ? localStorage.getItem("theme")
+    : null;
 
-    if (currentTheme) {
-        document.documentElement.setAttribute('data-theme', currentTheme);
+  if (currentTheme) {
+    document.documentElement.setAttribute("data-theme", currentTheme);
 
-        if (currentTheme === 'light') {
-            toggle.checked = true;
-        }
+    if (currentTheme === "light") {
+      toggle.checked = true;
     }
+  }
 }
 
-
-// icons current color 
+// icons current color
 // const footerIcons = document.querySelectorAll(".footer__item");
-
 
 // footerIcons.forEach(icon => {
 //     icon.addEventListener("click", () => {

@@ -23,6 +23,9 @@ img {
   height: auto;
   display: block; }
 
+a:active {
+  color: rgba(0, 0, 0, 0); }
+
 a {
   text-decoration: none; }
   a:hover {
@@ -44,6 +47,9 @@ img {
   width: 100%;
   height: auto;
   display: block; }
+
+a:active {
+  color: rgba(0, 0, 0, 0); }
 
 a {
   text-decoration: none; }
@@ -137,6 +143,9 @@ img {
   height: auto;
   display: block; }
 
+a:active {
+  color: rgba(0, 0, 0, 0); }
+
 a {
   text-decoration: none; }
   a:hover {
@@ -192,6 +201,13 @@ a {
 .jello-vertical {
   -webkit-animation: jello-vertical 0.9s both;
   animation: jello-vertical 0.9s both; }
+
+.scale-up-hor-left {
+  -webkit-animation: scale-up-hor-left 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: scale-up-hor-left 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
+
+.rotate {
+  transform: rotate(180deg); }
 
 @-webkit-keyframes jello-horizontal {
   0% {
@@ -285,6 +301,30 @@ a {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1); } }
 
+@-webkit-keyframes scale-up-hor-left {
+  0% {
+    -webkit-transform: scaleX(0.4);
+    transform: scaleX(0.4);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%; }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%; } }
+
+@keyframes scale-up-hor-left {
+  0% {
+    -webkit-transform: scaleX(0.4);
+    transform: scaleX(0.4);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%; }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%; } }
+
 /* Main-Colors */
 /* Additional-Colors */
 /* Font-sizes */
@@ -301,6 +341,9 @@ img {
   width: 100%;
   height: auto;
   display: block; }
+
+a:active {
+  color: rgba(0, 0, 0, 0); }
 
 a {
   text-decoration: none; }
@@ -384,6 +427,9 @@ img {
   width: 100%;
   height: auto;
   display: block; }
+
+a:active {
+  color: rgba(0, 0, 0, 0); }
 
 a {
   text-decoration: none; }
@@ -475,6 +521,9 @@ img {
   height: auto;
   display: block; }
 
+a:active {
+  color: rgba(0, 0, 0, 0); }
+
 a {
   text-decoration: none; }
   a:hover {
@@ -490,25 +539,25 @@ details {
   border-radius: 6px;
   background: rgba(0, 0, 0, 0);
   color: #263238;
-  transition: background-color .15s; }
+  transition: background-color 0.15s; }
   details > :last-child {
     margin-bottom: 1rem; }
   details::before {
     width: 100%;
     height: 100%;
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     border-radius: inherit;
-    opacity: .15;
+    opacity: 0.15;
     pointer-events: none;
-    transition: opacity .2s;
+    transition: opacity 0.2s;
     z-index: -1; }
   details[open] {
     background: rgba(0, 0, 0, 0); }
     details[open]::before {
-      opacity: .6; }
+      opacity: 0.6; }
 
 summary {
   padding: 20px;
@@ -521,16 +570,16 @@ summary {
   summary:focus {
     outline: none; }
   summary::before, summary::after {
-    width: .75em;
+    width: 0.75em;
     height: 2px;
     position: absolute;
     top: 50%;
     right: 20px;
-    content: '';
+    content: "";
     background-color: currentColor;
     text-align: right;
     transform: translateY(-50%);
-    transition: transform .20s ease-in-out; }
+    transition: transform 0.2s ease-in-out; }
   summary::after {
     transform: translateY(-50%) rotate(90deg); }
     [open] summary::after {
@@ -539,7 +588,7 @@ summary {
     display: none; }
 
 #_ionicons_svg_ios-arrow-forward {
-  fill: #341931ba;
+  fill: var(--font-color);
   height: 15px; }
 
 .arrow__svg {
@@ -604,6 +653,9 @@ img {
   height: auto;
   display: block; }
 
+a:active {
+  color: rgba(0, 0, 0, 0); }
+
 a {
   text-decoration: none; }
   a:hover {
@@ -665,13 +717,12 @@ a {
   border-radius: 30px;
   background: rgba(0, 0, 0, 0);
   border: 2px solid #FF1168;
-  margin: 20px 0; }
+  margin: 20px 0;
+  color: #FF1168;
+  font-size: 15pt;
+  font-weight: 600; }
   .listenAll__button:focus {
     outline: none; }
-  .listenAll__button .main__listenAll {
-    color: #FF1168;
-    font-size: 15pt;
-    font-weight: 600; }
 
 /* Main-Colors */
 /* Additional-Colors */
@@ -689,6 +740,9 @@ img {
   width: 100%;
   height: auto;
   display: block; }
+
+a:active {
+  color: rgba(0, 0, 0, 0); }
 
 a {
   text-decoration: none; }
