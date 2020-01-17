@@ -46,13 +46,14 @@ if (toggle) {
   }
 }
 
-// icons current color
-// const footerIcons = document.querySelectorAll(".footer__item");
+const params = new URLSearchParams(window.location.search);
+const theme = params.get("theme");
+const item = document.querySelector(`#${theme}`);
+const wifi = document.querySelector(`.${theme}`);
 
-// footerIcons.forEach(icon => {
-//     icon.addEventListener("click", () => {
-//         icon.classList.add("footer__current");
-
-//         console.log("clicked")
-//     })
-// })
+if (item) {
+  item.style.fill = `var(--font-color)`;
+}
+if (wifi) {
+  wifi.style.background = "var(--font-color)";
+}
