@@ -758,8 +758,8 @@ a {
     outline: none; }
 
 .fade-in {
-  -webkit-animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
+  -webkit-animation: fade-in 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
 
 @-webkit-keyframes fade-in {
   0% {
@@ -822,7 +822,29 @@ a {
   height: 3px;
   background: #FF1168;
   margin: 15px 0;
-  position: relative; }
+  position: relative;
+  -webkit-appearance: none;
+  transition: opacity 0.2s; }
+  .sectionSlider .sectionSlider__slider :focus {
+    outline: none; }
+  .sectionSlider .sectionSlider__slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url("/assets/images/slider_icon.svg");
+    cursor: pointer; }
+  .sectionSlider .sectionSlider__slider::-moz-range-thumb {
+    width: 23px;
+    height: 25px;
+    border: 0;
+    background: url("/assets/images/slider_icon.svg");
+    cursor: pointer; }
+  .sectionSlider .sectionSlider__slider .sectionSlider__icon {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -35%); }
 
 .sectionSlider .sectionSlider__songLength {
   display: flex;
