@@ -17,18 +17,27 @@
 
     .playlist__galleryitem img {
         filter: contrast(1.2);
+        -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation-delay: 100ms;
 
     }
 
     .playlist__galleryitem_left {
         transform: translateX(-40px);
-
+        -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation-delay: 50ms;
         filter: contrast(1.2);
+
     }
 
     .playlist__galleryitem_right {
         transform: translateX(40px);
         filter: contrast(1.2);
+        -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation-delay: 50ms;
     }
 }
 
@@ -92,5 +101,29 @@
         outline: none;
     }
 
-    .main__listenAll {}
+}
+
+.fade-in {
+    -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
