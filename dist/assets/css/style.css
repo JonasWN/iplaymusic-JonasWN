@@ -874,7 +874,54 @@ a {
   .footerPlayOptions .playButton path {
     fill: #FF1168; }
 
-@media screen and (max-height: 470px) {
+.main__playingIcon {
+  position: relative; }
+
+#footer__playButton {
+  -webkit-transition: all 0.5s ease;
+  width: 20%; }
+  #footer__playButton svg {
+    width: 100%;
+    height: 100%; }
+  #footer__playButton .circle {
+    stroke: #FF1168;
+    stroke-dasharray: 650;
+    stroke-dashoffset: 650;
+    -webkit-transition: all 0.5s ease-in-out;
+    opacity: 0.3; }
+  #footer__playButton .triangle {
+    -webkit-transition: all 0.7s ease-in-out;
+    stroke-dasharray: 240;
+    stroke-dashoffset: 480;
+    stroke: #FF1168;
+    transform: translateY(0); }
+  #footer__playButton .triangle_clicked {
+    stroke-dashoffset: 0;
+    opacity: 1;
+    stroke: #f8aa28;
+    animation: nudge 200ms ease-in-out both 550ms alternate;
+    stroke: #FF1168;
+    transition: all 0.8s ease-in-out;
+    stroke-dasharray: 290; }
+
+@keyframes nudge {
+  0% {
+    fill: #FF1168;
+    fill-opacity: 0%; }
+  30% {
+    fill-opacity: 30%; }
+  50% {
+    fill-opacity: 50%; }
+  75% {
+    fill-opacity: 70%; }
+  100% {
+    fill: #FF1168;
+    fill-opacity: 100%; } }
+  #footer__playButton .circle_clicked {
+    stroke-dashoffset: 0;
+    opacity: 1; }
+
+@media screen and (max-height: 530px) {
   .sectionSlider .sectionSlider__title {
     color: #fff;
     text-align: center; }
@@ -887,9 +934,26 @@ a {
     margin: 15px 0;
     position: relative; }
   .sectionSlider .sectionSlider__songLength {
-    margin: 0; }
+    margin: 0 0 0px 0; }
   .main__playingIcon .main__centerIcon {
-    height: 40vh; } }
+    height: 50vh; } }
+
+@media screen and (max-height: 490px) {
+  .sectionSlider .sectionSlider__title {
+    color: #fff;
+    text-align: center; }
+    .sectionSlider .sectionSlider__title .title__heading {
+      font-size: 15pt; }
+  .sectionSlider .sectionSlider__slider {
+    width: 100%;
+    height: 3px;
+    background: #FF1168;
+    margin: 15px 0;
+    position: relative; }
+  .sectionSlider .sectionSlider__songLength {
+    margin: 0 0 0px 0; }
+  .main__playingIcon .main__centerIcon {
+    height: 35vh; } }
 
 :root {
   --primary-color: #FF1168;

@@ -1,12 +1,15 @@
 const toggle = document.querySelector("#themeSwitch");
 
 const switchTheme = e => {
-  if (toggle.classList.contains("darkMode")) {
+  const themedata = localStorage.getItem("theme");
+
+  if (themedata == "dark") {
     document.documentElement.setAttribute("data-theme", "light");
 
     toggle.classList.remove("darkMode");
 
     localStorage.setItem("theme", "light");
+
     toggle.classList.add("jello-horizontal");
 
     setTimeout(() => {
@@ -26,7 +29,6 @@ const switchTheme = e => {
     }, 600);
 
     console.log("dark-mode");
-    console.log(e.target);
   }
 };
 
