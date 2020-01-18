@@ -86,23 +86,34 @@
                                 r="162.5" transform="translate(37.5 37.5)" fill="#ff1168" opacity="0.25" />
                         </g>
                         <g transform="matrix(1, 0, 0, 1, -12.5, 58.5)" filter="url(#pexels-photo-1727280-2)">
-                            <circle id="pexels-photo-1727280-6" data-name="pexels-photo-1727280" cx="137.5" cy="137.5"
-                                r="137.5" transform="translate(62.5 62.5)" fill="#ff1168" opacity="0.25" />
+                            <circle id="pexels-photo-1727280-6" class="img__circle" data-name="pexels-photo-1727280"
+                                cx="137.5" cy="137.5" r="137.5" transform="translate(62.5 62.5)" fill="#ff1168"
+                                opacity="0.25" />
                         </g>
                         <g transform="matrix(1, 0, 0, 1, -12.5, 58.5)" filter="url(#pexels-photo-1727280-3)">
                             <circle id="pexels-photo-1727280-7" data-name="pexels-photo-1727280" cx="112.5" cy="112.5"
                                 r="112.5" transform="translate(87.5 85.5)" fill="url(#pattern)" />
+                            <!-- <div class="circles__waves "></div>
+                            <div class="circles__waves "></div>
+                            <div class="circles__waves "></div>
+                            <div class="circles__waves "></div> -->
                         </g>
+
+
                         <g transform="matrix(1, 0, 0, 1, -12.5, 58.5)" filter="url(#pexels-photo-1727280-4)">
                             <circle id="pexels-photo-1727280-8" data-name="pexels-photo-1727280" cx="112.5" cy="112.5"
                                 r="112.5" transform="translate(87.5 85.5)" fill="#ff1168" opacity="0.25" />
+
                         </g>
                     </g>
                 </svg>
 
             </picture>
-        </main>
 
+
+
+
+        </main>
 
         <section class="sectionSlider">
             <div class="sectionSlider__title">
@@ -167,17 +178,40 @@
                 </li>
                 <li class="footerPlayOptions__item"><img data-lazy="/assets/images/_ionicons_svg_ios-rewind.svg"
                         alt="Play-Pause-Icons" class="footerPlayOptions__img"></li>
-                <li class="footerPlayOptions__item"><svg xmlns="http://www.w3.org/2000/svg" class="playButton"
-                        width="8.001" height="10" viewBox="0 0 8.001 10">
+                <li class="footerPlayOptions__item" id="footer__playButton">
 
-                        <path id="_ionicons_svg_ios-play"
-                            d="M128,96.276v9.481a.244.244,0,0,0,.366.225l7.515-4.74a.269.269,0,0,0,0-.447l-7.515-4.74A.242.242,0,0,0,128,96.276Z"
-                            transform="translate(-128 -96.017)" fill="#fff" />
+
+                    <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In  -->
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="213.7px"
+                        height="213.7px" viewBox="0 0 213.7 213.7" enable-background="new 0 0 213.7 213.7"
+                        xml:space="preserve">
+
+                        <polygon class='triangle' id="XMLID_18_" fill="none" stroke-width="7" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-miterlimit="10" points="
+                            73.5,62.5 148.5,105.8 73.5,149.1 " />
+
+                        <circle class='circle' id="XMLID_17_" fill="none" stroke-width="7" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-miterlimit="10" cx="106.8" cy="106.8" r="103.3" />
                     </svg>
+
+
+
+
                 </li>
                 <li class="footerPlayOptions__item"><img data-lazy="/assets/images/_ionicons_svg_ios-fastforward.svg"
                         alt="Play-Pause-Icons" class="footerPlayOptions__img"></li>
                 <li class="footerPlayOptions__item"><img data-lazy="/assets/images/_ionicons_svg_ios-skip-forward.svg"
                         alt="Play-Pause-Icons" class="footerPlayOptions__img" </li> </ul> </footer> <script
                         src="/assets/js/slider.js" defer></script>
+                    <script src="/assets/js/playing.js" defer></script>
                     <% include ../partials/post_footer %>
+
+
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" class="playButton"
+                        width="8.001" height="10" viewBox="0 0 8.001 10">
+
+                        <path id="_ionicons_svg_ios-play"
+                            d="M128,96.276v9.481a.244.244,0,0,0,.366.225l7.515-4.74a.269.269,0,0,0,0-.447l-7.515-4.74A.242.242,0,0,0,128,96.276Z"
+                            transform="translate(-128 -96.017)" fill="#fff" />
+                    </svg>  -->
