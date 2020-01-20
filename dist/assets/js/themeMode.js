@@ -6,22 +6,11 @@ const switchTheme = e => {
   if (themedata == "dark") {
     document.documentElement.setAttribute("data-theme", "light");
 
-<<<<<<< HEAD
-        // toggle.classList.toggle("jello-horizontal");
-        localStorage.setItem('theme', 'light');
-=======
     toggle.classList.remove("darkMode");
->>>>>>> 65ea37a1821a6c776f3fa6686f2f71405bbab858
 
     localStorage.setItem("theme", "light");
 
-<<<<<<< HEAD
-        // toggle.classList.remove("jello-horizontal");
-        // toggle.classList.toggle("jello-vertical");
-        localStorage.setItem('theme', 'dark');
-=======
     toggle.classList.add("jello-horizontal");
->>>>>>> 65ea37a1821a6c776f3fa6686f2f71405bbab858
 
     setTimeout(() => {
       toggle.classList.remove("jello-horizontal");
