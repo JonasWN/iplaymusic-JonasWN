@@ -6,7 +6,7 @@ const switchTheme = e => {
         document.documentElement.setAttribute("data-theme", "light");
         e.target.classList.remove("darkMode");
 
-        toggle.classList.toggle("jello-horizontal");
+        // toggle.classList.toggle("jello-horizontal");
         localStorage.setItem('theme', 'light');
 
         console.log("light-mode")
@@ -14,8 +14,8 @@ const switchTheme = e => {
         document.documentElement.setAttribute("data-theme", "dark");
         e.target.classList.add("darkMode");
 
-        toggle.classList.remove("jello-horizontal");
-        toggle.classList.toggle("jello-vertical");
+        // toggle.classList.remove("jello-horizontal");
+        // toggle.classList.toggle("jello-vertical");
         localStorage.setItem('theme', 'dark');
 
         console.log("dark-mode")
