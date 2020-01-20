@@ -49,6 +49,9 @@ img {
     display: block;
 }
 
+a:active {
+    color: rgba(0, 0, 0, 0);
+}
 
 a {
     text-decoration: none;
