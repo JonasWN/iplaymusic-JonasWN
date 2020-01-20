@@ -1,21 +1,24 @@
-const targets = document.querySelectorAll("img");
+setTimeout(() => {
+  const targets = document.querySelectorAll("img");
 
-const lazyLoad = target => {
-  const io = new IntersectionObserver((entires, observer) => {
-    entires.forEach(entry => {
-      if (entry.isIntersecting) {
-        console.log("LazyLoaded!");
+  const lazyLoad = target => {
+    const io = new IntersectionObserver((entires, observer) => {
+      entires.forEach(entry => {
+        if (entry.isIntersecting) {
+          console.log("LazyLoaded!");
 
-        const img = entry.target;
-        const src = img.getAttribute("data-lazy");
+          const img = entry.target;
+          const src = img.getAttribute("data-lazy");
 
-        img.setAttribute("src", src);
-        observer.disconnect();
-      }
+          img.setAttribute("src", src);
+          observer.disconnect();
+        }
+      });
     });
-  });
 
-  io.observe(target);
-};
+    io.observe(target);
+  };
 
-targets.forEach(lazyLoad);
+  targets.forEach(lazyLoad);
+
+}, 50);
