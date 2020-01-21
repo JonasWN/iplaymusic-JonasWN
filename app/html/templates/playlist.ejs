@@ -45,7 +45,7 @@
         Rock Ballads
     </h3>
     <ul class="main__songsList">
-        <li class="main__item">
+        <!-- <li class="main__item">
             <a href="/playing"><img data-lazy="/assets/images/Group 422.svg" alt="Album-cover" class="main__thumb"></a>
             <div class="main__imgText">
                 <h4 class="main__itemHeader">Old Town Road</h4>
@@ -76,11 +76,24 @@
                 <p class="main__itemText">Juice WRLD</p>
             </div>
             <p class="main__songCount">2:30</p>
-        </li>
+        </li> -->
     </ul>
     <a href="/playing" class="main__listenAll"> <button class="listenAll__button"> Listen All</button></a>
 </main>
 
 
+
+<template id="mainTemplate">
+    <li class="main__item">
+        <a href="/playing"><img data-lazy="/assets/images/Group 422.svg" alt="Album-cover" class="main__thumb"></a>
+        <div class="main__imgText">
+            <h4 class="main__itemHeader">Old Town Road</h4>
+            <p class="main__itemText">Billy Ray Cyrus</p>
+        </div>
+        <p class="main__songCount">3:54</p>
+    </li>
+</template>
+
 <% include ../partials/footer %>
+<script src="/assets/js/playlistAPI.js" defer></script>
 <% include ../partials/post_footer %>
