@@ -1,6 +1,5 @@
 const indexClone = document.querySelector("#main__template");
 const mainList = document.querySelector(".index__Main");
-const token = `BQC2kNyy6vzLhdtMYZshDanLZ3mtsqH9MIrhq5jrDoWLGNhIEbyXtm_KafOFR2mJGzgPPqOa3A8EDA_txrY-PwrXU1OfjR4hdiCOZsrAx11r4AyfHi8BfZfdWQ-gMfUncQcFHbTC`;
 
 var client_id = "97436deef1ac414495be09ca5d67c3dc"; // Your client id
 var client_secret = "98f9d13a1b374c96bcfd322c29915b40"; // Your secret
@@ -42,5 +41,4 @@ fetch("https://accounts.spotify.com/api/token", {
           mainList.appendChild(productClone);
         })
       })
-
   })

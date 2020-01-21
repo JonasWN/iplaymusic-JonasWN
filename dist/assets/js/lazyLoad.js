@@ -21,4 +21,4 @@ setTimeout(() => {
 
   targets.forEach(lazyLoad);
 
-}, 50);
+}, 190);

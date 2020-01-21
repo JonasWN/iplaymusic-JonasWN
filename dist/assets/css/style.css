@@ -64,7 +64,10 @@ a {
     padding: 25px; }
 
 .index__Main {
-  margin-bottom: 15vh; }
+  margin-bottom: 15vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 100px 30px; }
 
 .title__list {
   display: flex;
@@ -94,7 +97,8 @@ a {
 .main__img {
   position: relative;
   max-width: 400px;
-  margin: 0 auto 30px auto; }
+  margin: 0 auto 30px auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
   .main__img .main__imgTexts {
     position: absolute;
     top: 40%;
