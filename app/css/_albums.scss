@@ -34,7 +34,7 @@
       height: 130px;
       overflow: hidden;
       margin-right: 10px;
-      border-radius: 10px;
+      border: 1px solid #000000ba;
     }
   }
 }
@@ -59,8 +59,8 @@
   .main__item {
     display: flex;
     color: var(--font-color);
-
     margin: 25px 0;
+    height: 50px;
 
     .main__imgText {
       display: flex;
@@ -69,7 +69,8 @@
       justify-content: space-evenly;
 
       .main__itemHeader {
-        font-weight: 800;
+        font-weight: 500;
+        color: var(--font-color);
       }
     }
 
@@ -87,6 +88,7 @@
     .main__songCount {
       margin-left: auto;
       align-self: center;
+      font-size: 14px;
     }
   }
 }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="shortcut icon" href="/assets/images/music-logo-solid.png">
     <title>iPlayMusic</title>
 </head>
 
@@ -39,7 +40,7 @@
 </header>
 
 <main class="index__Main">
-    <div class="main__img">
+    <!-- <div class="main__img">
         <img data-lazy="/assets/images/pexels-photo-1816943.png" alt="Image of a womans back">
         <div class="main__imgTexts">
             <h3 class="main__img_title">
@@ -56,10 +57,17 @@
             </h3>
             <p class="main__img_p">SoundTrack</p>
         </div>
-    </div>
+    </div> -->
 </main>
 
 
+
+<template id="main__template">
+    <div class="main__img">
+        <a href="/" id="featured__playlistLink"> <img data-lazy="/assets/images/pexels-photo-1816943.png"
+                alt="Featured Playlist cover"></a>
+    </div>
+</template>
 
 <footer class="footer__fixed">
     <ul class="footer__list ul">
@@ -79,9 +87,9 @@
                 </svg>
             </a>
         </li>
-        <li class="footer__item"> <a href="/playlist?theme=_ionicons_svg_ios-microphone"> <svg class="item__img"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12.857"
-                    height="20" viewBox="0 0 12.857 20">
+        <li class="footer__item"> <a href="/playlist?id=37i9dQZF1DX3PFzdbtx1Us&theme=_ionicons_svg_ios-microphone"> <svg
+                    class="item__img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="12.857" height="20" viewBox="0 0 12.857 20">
                     <defs>
                         <linearGradient id="linear-gradient" y1="0.42" x2="1" y2="0.42"
                             gradientUnits="objectBoundingBox">
@@ -132,12 +140,14 @@
         </li>
     </ul>
 </footer>
+<script src="/assets/js/indexAPI.js" defer type="module"></script>
         <!-- wrapper-ends -->
         </div>
 
+        <script src="//unpkg.com/@jonaswn/umd-test/umd.js" defer></script>
         <script src="/assets/js/themeMode.js" defer></script>
         <script src="/assets/js/quicklink.js" defer></script>
-        <script src="/assets/js/lazyLoad.js" defer></script>
+        <script src="/assets/js/lazyLoad.js" defer type="module"></script>
 
         </body>
 

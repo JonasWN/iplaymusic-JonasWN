@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="shortcut icon" href="/assets/images/music-logo-solid.png">
     <title>iPlayMusic</title>
 </head>
 
@@ -57,7 +58,7 @@
         Rock Ballads
     </h3>
     <ul class="main__songsList">
-        <li class="main__item">
+        <!-- <li class="main__item">
             <a href="/playing"><img data-lazy="/assets/images/Group 422.svg" alt="Album-cover" class="main__thumb"></a>
             <div class="main__imgText">
                 <h4 class="main__itemHeader">Old Town Road</h4>
@@ -88,11 +89,23 @@
                 <p class="main__itemText">Juice WRLD</p>
             </div>
             <p class="main__songCount">2:30</p>
-        </li>
+        </li> -->
     </ul>
     <a href="/playing" class="main__listenAll"> <button class="listenAll__button"> Listen All</button></a>
 </main>
 
+
+
+<template id="mainTemplate">
+    <li class="main__item">
+        <a href="/playing"><img data-lazy="/assets/images/Group 422.svg" alt="Album-cover" class="main__thumb"></a>
+        <div class="main__imgText">
+            <h4 class="main__itemHeader">Old Town Road</h4>
+            <p class="main__itemText">Billy Ray Cyrus</p>
+        </div>
+        <p class="main__songCount">3:54</p>
+    </li>
+</template>
 
 <footer class="footer__fixed">
     <ul class="footer__list ul">
@@ -112,9 +125,9 @@
                 </svg>
             </a>
         </li>
-        <li class="footer__item"> <a href="/playlist?theme=_ionicons_svg_ios-microphone"> <svg class="item__img"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12.857"
-                    height="20" viewBox="0 0 12.857 20">
+        <li class="footer__item"> <a href="/playlist?id=37i9dQZF1DX3PFzdbtx1Us&theme=_ionicons_svg_ios-microphone"> <svg
+                    class="item__img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="12.857" height="20" viewBox="0 0 12.857 20">
                     <defs>
                         <linearGradient id="linear-gradient" y1="0.42" x2="1" y2="0.42"
                             gradientUnits="objectBoundingBox">
@@ -165,12 +178,14 @@
         </li>
     </ul>
 </footer>
+<script src="/assets/js/playlistAPI.js" defer type="module"></script>
         <!-- wrapper-ends -->
         </div>
 
+        <script src="//unpkg.com/@jonaswn/umd-test/umd.js" defer></script>
         <script src="/assets/js/themeMode.js" defer></script>
         <script src="/assets/js/quicklink.js" defer></script>
-        <script src="/assets/js/lazyLoad.js" defer></script>
+        <script src="/assets/js/lazyLoad.js" defer type="module"></script>
 
         </body>
 

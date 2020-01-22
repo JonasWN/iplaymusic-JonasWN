@@ -44,7 +44,18 @@ forwards.forEach(icon => {
     }, 200);
 
     if (icon == forwards[0]) {
-      sliderback.value += 10;
+      sliderback.value++;
+      sliderback.value++;
+      sliderback.value++;
+      sliderback.value++;
+      sliderback.value++;
+      sliderback.value++;
+      sliderback.value++;
+      sliderback.value++;
+      sliderback.value++;
+      sliderback.value++;
+
+      // += 10 dident work
       console.log(sliderback.value);
     } else {
       // skip to next song

@@ -16,7 +16,8 @@
     overflow: hidden;
 
     .playlist__galleryitem img {
-        filter: contrast(1.2);
+        filter: contrast(1.3);
+        border: 1px solid #000000ba;
         -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
         animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
         animation-delay: 100ms;
@@ -28,16 +29,18 @@
         -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
         animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
         animation-delay: 50ms;
-        filter: contrast(1.2);
+        filter: contrast(1.3);
+        border: 1px solid #000000ba;
 
     }
 
     .playlist__galleryitem_right {
         transform: translateX(40px);
-        filter: contrast(1.2);
         -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
         animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
         animation-delay: 50ms;
+        filter: contrast(1.3);
+        border: 1px solid #000000ba;
     }
 }
 
@@ -45,6 +48,7 @@
 .main__playList {
 
     margin-top: 30px;
+    overflow-y: hidden;
 
     .main__title_playlist {
         text-align: center;
@@ -61,6 +65,8 @@
 
 .main__thumb {
     object-fit: contain;
+    filter: contrast(1.3);
+    border: 1px solid #000000ba;
 }
 
 @media screen and (min-width: 500px) {

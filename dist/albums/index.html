@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="shortcut icon" href="/assets/images/music-logo-solid.png">
     <title>iPlayMusic</title>
 </head>
 
@@ -44,15 +45,6 @@
 
 <section class="gallery__section">
     <ul class="gallery__list">
-        <li class="gallery__item">
-            <img data-lazy="/assets/images/pexels-photo-1988681@2x.jpg" class="gallery__img" alt="album-cover-photo">
-        </li>
-        <li class="gallery__item">
-            <img data-lazy="/assets/images/pexels-photo-1435457.jpg" class="gallery__img" alt="album-cover-photo">
-        </li>
-        <li class="gallery__item">
-            <img data-lazy="/assets/images/pexels-photo-1816943.jpg" class="gallery__img" alt="album-cover-photo">
-        </li>
     </ul>
 </section>
 
@@ -63,49 +55,14 @@
     </div>
 
     <ul class="main__list">
-        <li class="main__item">
-            <a href="/albumDetails"><img data-lazy="/assets/images/pexels-photo-1816943.png" alt="Album-cover"
-                    class="main__thumb noObject-fit"></a>
-            <div class="main__imgText">
-                <h4 class="main__itemHeader">Old Town Road</h4>
-                <p class="main__itemText">Billy Ray Cyrus</p>
-            </div>
-            <p class="main__songCount">12 Songs</p>
-        </li>
-        <li class="main__item">
-            <a href="/albumDetails"> <img data-lazy="/assets/images/pexels-photo-2064522@2x.png" alt="Album-cover"
-                    class="main__thumb"></a>
-            <div class="main__imgText">
-                <h4 class="main__itemHeader">Victory Lap</h4>
-                <p class="main__itemText">Nipsey Hussle</p>
-            </div>
-            <p class="main__songCount">8 Songs</p>
-        </li>
-        <li class="main__item">
-            <a href="/albumDetails"> <img data-lazy="/assets/images/pexels-photo-1844521.png" alt="Album-cover"
-                    class="main__thumb"></a>
-            <div class="main__imgText">
-                <h4 class="main__itemHeader">Thank U, Next</h4>
-                <p class="main__itemText">Ariana Grande</p>
-            </div>
-            <p class="main__songCount">13 Songs</p>
-        </li>
-        <li class="main__item">
-            <a href="/albumDetails"> <img data-lazy="/assets/images/pexels-photo-2062347.png" alt="Album-cover"
-                    class="main__thumb"></a>
-            <div class="main__imgText">
-                <h4 class="main__itemHeader">Death Race For Love</h4>
-                <p class="main__itemText">Juice WRLD</p>
-            </div>
-            <p class="main__songCount">11 Songs</p>
-        </li>
+
     </ul>
 
 </main>
 
 <template id="new__album">
     <li class="main__item">
-        <img data-lazy="" alt="" class="main__thumb">
+        <a href=""> <img data-lazy="" alt="" class="main__thumb"></a>
         <div class="main__imgText">
             <a href="" class="main__itemHeader"></a>
             <p class="main__itemText"></p>
@@ -114,9 +71,12 @@
     </li>
 </template>
 
-<template class="featured__album">
+
+
+<template id="featured__album">
     <li class="gallery__item">
-        <img data-lazy="/assets/images/pexels-photo-1988681@2x.jpg" class="gallery__img" alt="album-cover-photo">
+        <a href=""> <img data-lazy="/assets/images/pexels-photo-1988681@2x.jpg" class="gallery__img"
+                alt="album-cover-photo"></a>
     </li>
 </template>
 
@@ -138,9 +98,9 @@
                 </svg>
             </a>
         </li>
-        <li class="footer__item"> <a href="/playlist?theme=_ionicons_svg_ios-microphone"> <svg class="item__img"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12.857"
-                    height="20" viewBox="0 0 12.857 20">
+        <li class="footer__item"> <a href="/playlist?id=37i9dQZF1DX3PFzdbtx1Us&theme=_ionicons_svg_ios-microphone"> <svg
+                    class="item__img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="12.857" height="20" viewBox="0 0 12.857 20">
                     <defs>
                         <linearGradient id="linear-gradient" y1="0.42" x2="1" y2="0.42"
                             gradientUnits="objectBoundingBox">
@@ -191,12 +151,14 @@
         </li>
     </ul>
 </footer>
+<script src="/assets/js/albumsAPI.js" defer type="module"></script>
         <!-- wrapper-ends -->
         </div>
 
+        <script src="//unpkg.com/@jonaswn/umd-test/umd.js" defer></script>
         <script src="/assets/js/themeMode.js" defer></script>
         <script src="/assets/js/quicklink.js" defer></script>
-        <script src="/assets/js/lazyLoad.js" defer></script>
+        <script src="/assets/js/lazyLoad.js" defer type="module"></script>
 
         </body>
 

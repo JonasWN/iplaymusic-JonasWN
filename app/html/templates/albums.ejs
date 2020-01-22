@@ -32,15 +32,6 @@
 
 <section class="gallery__section">
     <ul class="gallery__list">
-        <li class="gallery__item">
-            <img data-lazy="/assets/images/pexels-photo-1988681@2x.jpg" class="gallery__img" alt="album-cover-photo">
-        </li>
-        <li class="gallery__item">
-            <img data-lazy="/assets/images/pexels-photo-1435457.jpg" class="gallery__img" alt="album-cover-photo">
-        </li>
-        <li class="gallery__item">
-            <img data-lazy="/assets/images/pexels-photo-1816943.jpg" class="gallery__img" alt="album-cover-photo">
-        </li>
     </ul>
 </section>
 
@@ -51,49 +42,14 @@
     </div>
 
     <ul class="main__list">
-        <li class="main__item">
-            <a href="/albumDetails"><img data-lazy="/assets/images/pexels-photo-1816943.png" alt="Album-cover"
-                    class="main__thumb noObject-fit"></a>
-            <div class="main__imgText">
-                <h4 class="main__itemHeader">Old Town Road</h4>
-                <p class="main__itemText">Billy Ray Cyrus</p>
-            </div>
-            <p class="main__songCount">12 Songs</p>
-        </li>
-        <li class="main__item">
-            <a href="/albumDetails"> <img data-lazy="/assets/images/pexels-photo-2064522@2x.png" alt="Album-cover"
-                    class="main__thumb"></a>
-            <div class="main__imgText">
-                <h4 class="main__itemHeader">Victory Lap</h4>
-                <p class="main__itemText">Nipsey Hussle</p>
-            </div>
-            <p class="main__songCount">8 Songs</p>
-        </li>
-        <li class="main__item">
-            <a href="/albumDetails"> <img data-lazy="/assets/images/pexels-photo-1844521.png" alt="Album-cover"
-                    class="main__thumb"></a>
-            <div class="main__imgText">
-                <h4 class="main__itemHeader">Thank U, Next</h4>
-                <p class="main__itemText">Ariana Grande</p>
-            </div>
-            <p class="main__songCount">13 Songs</p>
-        </li>
-        <li class="main__item">
-            <a href="/albumDetails"> <img data-lazy="/assets/images/pexels-photo-2062347.png" alt="Album-cover"
-                    class="main__thumb"></a>
-            <div class="main__imgText">
-                <h4 class="main__itemHeader">Death Race For Love</h4>
-                <p class="main__itemText">Juice WRLD</p>
-            </div>
-            <p class="main__songCount">11 Songs</p>
-        </li>
+
     </ul>
 
 </main>
 
 <template id="new__album">
     <li class="main__item">
-        <img data-lazy="" alt="" class="main__thumb">
+        <a href=""> <img data-lazy="" alt="" class="main__thumb"></a>
         <div class="main__imgText">
             <a href="" class="main__itemHeader"></a>
             <p class="main__itemText"></p>
@@ -102,11 +58,15 @@
     </li>
 </template>
 
-<template class="featured__album">
+
+
+<template id="featured__album">
     <li class="gallery__item">
-        <img data-lazy="/assets/images/pexels-photo-1988681@2x.jpg" class="gallery__img" alt="album-cover-photo">
+        <a href=""> <img data-lazy="/assets/images/pexels-photo-1988681@2x.jpg" class="gallery__img"
+                alt="album-cover-photo"></a>
     </li>
 </template>
 
 <% include ../partials/footer %>
+<script src="/assets/js/albumsAPI.js" defer type="module"></script>
 <% include ../partials/post_footer %>
