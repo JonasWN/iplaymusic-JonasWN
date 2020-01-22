@@ -1,11 +1,9 @@
 import request from "/assets/js/indexAPI.js";
 
-
 const main = document.querySelector(".main__songsList");
 const mainClone = document.querySelector("#mainTemplate");
 const paramsID = new URLSearchParams(window.location.search);
 const id = paramsID.get("id");
-
 
 function millisToMinutesAndSeconds(millis) {
   // millis to min / seconds

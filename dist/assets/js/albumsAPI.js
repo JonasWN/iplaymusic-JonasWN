@@ -8,11 +8,12 @@ const gallery = document.querySelector(".gallery__list");
 const paramsID = new URLSearchParams(window.location.search);
 const id = paramsID.get("id");
 
-// GET data
+// GET Data
 const answer = async () => {
-  try {
-    let refreshToken = sessionStorage.getItem("refresh")
 
+  try {
+
+    let refreshToken = sessionStorage.getItem("refresh")
     const data = await fetch(
       `https://api.spotify.com/v1/browse/new-releases`, // Fetch Wanted Data
       {
@@ -69,11 +70,12 @@ const answer = async () => {
       ).textContent = `${item.total_tracks} Songs`;
       main.appendChild(productClone);
     });
+
   } catch (error) {
     console.log(error)
     request()
   }
-
 }
+
 
 answer();
