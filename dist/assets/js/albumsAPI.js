@@ -1,4 +1,4 @@
-import request from "/assets/js/indexAPI.js";
+import request from "/assets/js/postModule.js";
 
 const main = document.querySelector(".main__list");
 const mainClone = document.querySelector("#new__album");
@@ -74,6 +74,7 @@ const answer = async () => {
   } catch (error) {
     console.log(error)
     request()
+    answer();
   }
 }
 

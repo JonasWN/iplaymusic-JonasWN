@@ -1,4 +1,4 @@
-import request from "/assets/js/indexAPI.js";
+import request from "/assets/js/postModule.js";
 
 const main = document.querySelector(".main__songsList");
 const mainClone = document.querySelector("#mainTemplate");
@@ -70,6 +70,7 @@ const answer = async () => {
   } catch (error) {
     console.error(error)
     request()
+    answer();
   }
 }
 

@@ -1,4 +1,4 @@
-import request from "/assets/js/indexAPI.js";
+import request from "/assets/js/postModule.js";
 
 const paramsID = new URLSearchParams(window.location.search);
 const id = paramsID.get("id");
@@ -23,7 +23,6 @@ function millisToMinutesAndSeconds(millis) {
         minutes + 1 + ":00" :
         minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
-
 
 // GET Data
 const answer = async () => {
@@ -62,12 +61,14 @@ const answer = async () => {
             productClone.querySelector(".main__itemHeader").setAttribute("href", `/playing?id=${item.id}`);
             productClone.querySelector(".main__songCount").textContent = millisToMinutesAndSeconds(item.duration_ms)
             productClone.querySelector("a").setAttribute("href", `/playing?id=${item.id}`)
+            productClone.querySelector(".main__thumb").style.border = "none"
             elements.songList.appendChild(productClone)
         })
 
     } catch (error) {
         console.log(error)
         request()
+        answer();
     }
 }
 
