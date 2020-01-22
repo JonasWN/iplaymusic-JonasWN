@@ -2,7 +2,7 @@ import request from "/assets/js/postModule.js";
 
 const indexClone = document.querySelector("#main__template");
 const mainList = document.querySelector(".index__Main");
-
+const targets = document.querySelectorAll("img");
 // GET Data
 const answer = async () => {
 
