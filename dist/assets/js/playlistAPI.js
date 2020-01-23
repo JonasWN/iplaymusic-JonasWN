@@ -9,17 +9,15 @@ function millisToMinutesAndSeconds(millis) {
   // millis to min / seconds
   const minutes = Math.floor(millis / 60000);
   const seconds = ((millis % 60000) / 1000).toFixed(0);
-  return seconds == 60 ?
-    minutes + 1 + ":00" :
-    minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+  return seconds == 60
+    ? minutes + 1 + ":00"
+    : minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
 
 // GET Data
 const answer = async () => {
-
   try {
-
-    let refreshToken = sessionStorage.getItem("refresh")
+    let refreshToken = sessionStorage.getItem("refresh");
     const data = await fetch(
       `https://api.spotify.com/v1/playlists/${id}`, // Fetch Wanted Data
       {
@@ -32,8 +30,7 @@ const answer = async () => {
     );
 
     const result = await data.json();
-    console.log(result)
-
+    console.log(result);
 
     document
       .querySelector(".playlist__galleryitem img")
@@ -49,13 +46,14 @@ const answer = async () => {
       let productClone = mainClone.content.cloneNode(true);
       productClone
         .querySelector("a")
-        .setAttribute("href", `/playing?${item.track.id}`);
+        .setAttribute("href", `/playing?id=${item.track.id}`);
       productClone
         .querySelector(".main__thumb")
         .setAttribute("data-lazy", item.track.album.images[0].url);
 
       let nameString = item.track.name;
-      let name = nameString.slice(0, 12) + (nameString.length > 15 ? "..." : "");
+      let name =
+        nameString.slice(0, 12) + (nameString.length > 15 ? "..." : "");
 
       productClone.querySelector(".main__itemHeader").textContent = name;
 
@@ -66,12 +64,11 @@ const answer = async () => {
       ).textContent = millisToMinutesAndSeconds(item.track.duration_ms);
       main.appendChild(productClone);
     });
-
   } catch (error) {
-    console.error(error)
-    request()
+    console.error(error);
+    request();
     answer();
   }
-}
+};
 
 answer();

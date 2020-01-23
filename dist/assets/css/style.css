@@ -576,7 +576,8 @@ summary {
   font-weight: bold;
   cursor: pointer;
   background: #fff;
-  color: #fff; }
+  color: #fff;
+  font-size: 14pt; }
   summary:focus {
     outline: none; }
   summary::before, summary::after {
@@ -598,7 +599,7 @@ summary {
     display: none; }
 
 #_ionicons_svg_ios-arrow-forward {
-  fill: var(--font-color);
+  fill: #ff1168;
   height: 15px; }
 
 .arrow__svg {
@@ -610,11 +611,17 @@ summary {
   color: var(--font-color);
   padding: 10% 8% 4% 8%;
   font-size: 15pt; }
-  .summary__list .summary__item {
+  .summary__list .summary__item:not(:last-child) {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px; }
+    margin-bottom: 40px; }
+    .summary__list .summary__item:not(:last-child) a {
+      color: var(--font-color); }
+  .summary__list .summary__item:last-child {
+    display: flex;
+    justify-content: space-between; }
+    .summary__list .summary__item:last-child a {
+      color: var(--font-color); }
 
 .main__categories {
   margin-bottom: 15vh; }
@@ -815,83 +822,87 @@ a {
     cursor: pointer; }
 
 .playing {
-  background: url("/assets/images/pexels-photo-1771305.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  overflow: hidden; }
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 1fr; }
 
 .main__playingIcon .main__centerIcon {
   width: 100%;
   filter: contrast(1.2);
   height: 50vh; }
 
-.sectionSlider .sectionSlider__title {
-  color: #fff;
-  text-align: center; }
-  .sectionSlider .sectionSlider__title .title__heading {
-    font-size: 15pt; }
-
-.sectionSlider .sectionSlider__slider {
+.sectionSlider {
+  padding: 5%;
   width: 100%;
-  height: 3px;
-  background: #FF1168;
-  margin: 15px 0;
-  position: relative;
-  -webkit-appearance: none;
-  transition: opacity 0.2s; }
-  .sectionSlider .sectionSlider__slider :focus {
-    outline: none; }
-  .sectionSlider .sectionSlider__slider::-webkit-slider-thumb {
+  font-weight: 900; }
+  .sectionSlider .sectionSlider__title {
+    color: #fff;
+    text-align: center; }
+    .sectionSlider .sectionSlider__title .title__heading {
+      font-size: 15pt; }
+  .sectionSlider .title__underTitle {
+    color: #ffc100;
+    font-size: 14pt; }
+  .sectionSlider .sectionSlider__slider {
+    width: 100%;
+    height: 3px;
+    background: #FF1168;
+    margin: 35px 0;
+    position: relative;
     -webkit-appearance: none;
-    appearance: none;
-    width: 23px;
-    height: 24px;
-    border: 0;
-    background: url("/assets/images/slider_icon.svg");
-    cursor: pointer; }
-  .sectionSlider .sectionSlider__slider::-moz-range-thumb {
-    width: 23px;
-    height: 25px;
-    border: 0;
-    background: url("/assets/images/slider_icon.svg");
-    cursor: pointer; }
-  .sectionSlider .sectionSlider__slider .sectionSlider__icon {
+    transition: opacity 0.2s; }
+    .sectionSlider .sectionSlider__slider :focus {
+      outline: none; }
+    .sectionSlider .sectionSlider__slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 23px;
+      height: 24px;
+      border: 0;
+      background: url("/assets/images/slider_icon.svg");
+      cursor: pointer; }
+    .sectionSlider .sectionSlider__slider::-moz-range-thumb {
+      width: 23px;
+      height: 25px;
+      border: 0;
+      background: url("/assets/images/slider_icon.svg");
+      cursor: pointer; }
+    .sectionSlider .sectionSlider__slider .sectionSlider__icon {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -35%); }
+  .sectionSlider .sectionSlider__songLength {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    align-items: center;
+    font-size: 14px; }
+  .sectionSlider .thump__svg {
     position: absolute;
-    left: 50%;
-    transform: translate(-50%, -35%); }
-
-.sectionSlider .sectionSlider__songLength {
-  display: flex;
-  justify-content: space-between;
-  color: #fff;
-  font-size: 14px;
-  margin-bottom: 15px; }
-
-.sectionSlider .thump__svg {
-  position: absolute;
-  left: 124px;
-  top: -9px; }
-
-.sectionSlider .thumb__innerthumb {
-  position: absolute;
-  left: 130px;
-  top: -4px; }
-
-.footerPlayOptions .footerPlayOptions__list {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center; }
-
-.footerPlayOptions .playButton {
-  width: 50px;
-  height: 50px; }
-  .footerPlayOptions .playButton path {
-    fill: #FF1168; }
+    left: 124px;
+    top: -9px; }
+  .sectionSlider .thumb__innerthumb {
+    position: absolute;
+    left: 130px;
+    top: -4px; }
+  .sectionSlider .footerPlayOptions__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px; }
+  .sectionSlider .playButton {
+    width: 50px;
+    height: 50px; }
+    .sectionSlider .playButton path {
+      fill: #FF1168; }
 
 .main__playingIcon {
   position: relative; }
+
+.footerPlayOptions {
+  background: rgba(9, 8, 17, 0.96);
+  padding: 0 0 5% 0; }
 
 #footer__playButton {
   -webkit-transition: all 0.5s ease;
@@ -900,7 +911,7 @@ a {
     width: 100%;
     height: 100%; }
   #footer__playButton .circle {
-    stroke: #FF1168;
+    stroke: #ff1168;
     stroke-dasharray: 650;
     stroke-dashoffset: 650;
     -webkit-transition: all 0.5s ease-in-out;
@@ -909,20 +920,20 @@ a {
     -webkit-transition: all 0.6s ease-in-out;
     stroke-dasharray: 240;
     stroke-dashoffset: 480;
-    stroke: #FF1168;
+    stroke: #ff1168;
     transform: translateY(0); }
   #footer__playButton .triangle_clicked {
     stroke-dashoffset: 0;
     opacity: 1;
     stroke: #f8aa28;
     animation: nudge 300ms ease-in-out both 200ms alternate;
-    stroke: #FF1168;
+    stroke: #ff1168;
     transition: all 0.4s ease-in-out;
     stroke-dasharray: 290; }
 
 @keyframes nudge {
   0% {
-    fill: #FF1168;
+    fill: #ff1168;
     fill-opacity: 0%; }
   30% {
     fill-opacity: 30%; }
@@ -931,7 +942,7 @@ a {
   75% {
     fill-opacity: 70%; }
   100% {
-    fill: #FF1168;
+    fill: #ff1168;
     fill-opacity: 100%; } }
   #footer__playButton .circle_clicked {
     stroke-dashoffset: 0;
@@ -1055,7 +1066,7 @@ a {
 :root {
   --primary-color: #FF1168;
   --font-color: #fff;
-  --bg-color: #191934;
+  --bg-color: #0d101c;
   --heading-color: linear-gradient(to right, #ee0979, #fc1c62, #ff364a, #ff512f, #ff6a00); }
 
 [data-theme="light"] {
