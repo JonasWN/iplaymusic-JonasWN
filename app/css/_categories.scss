@@ -48,6 +48,7 @@ summary {
   cursor: pointer;
   background: #fff;
   color: #fff;
+  font-size: 14pt;
 
   &:focus {
     outline: none;
@@ -81,7 +82,7 @@ summary {
 }
 
 #_ionicons_svg_ios-arrow-forward {
-  fill: var(--font-color);
+  fill: #ff1168;
   height: 15px;
 }
 
@@ -98,15 +99,28 @@ summary {
 
   font-size: $headline-6;
 
-  .summary__item {
+  .summary__item:not(:last-child) {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    margin-bottom: 40px;
 
-    margin-bottom: 30px;
+    a {
+      color: var(--font-color);
+    }
   }
-}
 
+  .summary__item:last-child {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      color: var(--font-color);
+    }
+  }
+  // .summary__item p {
+  //   max-width: 80%;
+  // }
+}
 .main__categories {
   margin-bottom: 15vh;
 }
@@ -147,11 +161,10 @@ summary {
   background: $blue-color;
 }
 
-
-
 .slide-in-bck-center {
-  -webkit-animation: slide-in-bck-center 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: slide-in-bck-center 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: slide-in-bck-center 0.9s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-bck-center 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @-webkit-keyframes slide-in-bck-center {

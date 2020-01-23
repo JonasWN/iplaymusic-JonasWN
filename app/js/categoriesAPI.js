@@ -15,7 +15,8 @@ const detailColors = [
   "#00A1CB",
   "#115793"
 ];
-let counter = 0;
+
+// GET Categories
 const answer = async () => {
   try {
     let refreshToken = sessionStorage.getItem("refresh");
@@ -32,30 +33,23 @@ const answer = async () => {
 
     const result = await data.json();
     console.log(result);
-
-    //simple way
-    // let categoriesList = result.categories.items;
-    // const dropDownList = document.querySelectorAll("details summary");
-
-    // for (let i = 0; i < dropDownList.length; i++) {
-
-    //     dropDownList[i].textContent = categoriesList[i].name;
-    // }
-
     let categoriesList = result.categories.items;
 
+    // forEach category / create a summary
     categoriesList.forEach(genre => {
       const ColorGenerator = Math.floor(Math.random() * detailColors.length);
+
       let productClone = template.content.cloneNode(true);
       productClone.querySelector("summary").textContent = genre.name;
       productClone.querySelector("summary").style.background =
         detailColors[ColorGenerator];
+      productClone.querySelector(".summary__list").classList.add(genre.id);
       main.appendChild(productClone);
-      counter++;
-      console.log(counter);
-      const try2 = async () => {
+
+      // forEach category / fetch that category¨s playlists
+      const getPlaylist = async () => {
         try {
-          const data2 = await fetch(
+          const playListData = await fetch(
             `https://api.spotify.com/v1/browse/categories/${genre.id}/playlists`, // Fetch Wanted Data
             {
               method: "GET",
@@ -65,32 +59,38 @@ const answer = async () => {
               json: true
             }
           );
-          const result2 = await data2.json();
-          //   console.log(result2);
 
-          let playlists2 = result2.playlists.items;
-          console.log(playlists2);
-          let counter = playlists2.length;
-          //   console.log(counter);
-          const summaryList = document.querySelector(".summary__list");
+          const fetchedPlaylists = await playListData.json();
+          let playListItems = fetchedPlaylists.playlists.items;
 
-          //   console.log(summaryList);
-          playlists2.forEach(item => {
+          // foreach categorys playlist / add that playlist to an <li> / Add that <li> to the categorys <ul>
+          playListItems.forEach(item => {
             let playlistClone = playlists.content.cloneNode(true);
             playlistClone.querySelector("p").textContent = item.name;
-            summaryList.appendChild(playlistClone);
-
-            console.log(main.querySelector("ul"));
-            main.querySelector("ul").appendChild(playlistClone);
+            playlistClone
+              .querySelector("a")
+              .setAttribute("href", `/playlist?id=${item.id}`);
+            playlistClone
+              .querySelector("#icon__link")
+              .setAttribute("href", `/playlist?id=${item.id}`);
+            playlistClone.querySelector("#icon__link path").style.fill =
+              detailColors[ColorGenerator];
+            document.querySelector(`.${genre.id}`).appendChild(playlistClone);
           });
-        } catch {}
+        } catch (error) {
+          console.error(error);
+        }
       };
-      try2();
+
+      // Ivokes the 2nd fetch for playlists
+      getPlaylist();
     });
   } catch (error) {
+    // Callbacks if Token has run out
     console.log(error);
     request();
     answer();
+    getPlaylist();
   }
 };
 
