@@ -66,13 +66,18 @@ const answer = async () => {
       ).textContent = millisToMinutesAndSeconds(item.track.duration_ms);
       main.appendChild(productClone);
     });
+
+
+
     const targets = document.querySelectorAll("img");
+
     targets.forEach(lazyLoad);
 
+
   } catch (error) {
-    console.error(error);
+    console.log(error.message);
     request();
-    answer();
+    answer()
   }
 };
 

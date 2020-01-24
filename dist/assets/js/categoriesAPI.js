@@ -23,7 +23,7 @@ const answer = async () => {
   try {
     let refreshToken = sessionStorage.getItem("refresh");
     const data = await fetch(
-      `https://api.spotify.com/v1/browse/categories`, // Fetch Wanted Data
+      `https://api.spotify.com/v1/browse/categories?country=DK&limit=50`, // Fetch Wanted Data
       {
         method: "GET",
         headers: {
@@ -65,9 +65,12 @@ const answer = async () => {
           const fetchedPlaylists = await playListData.json();
           let playListItems = fetchedPlaylists.playlists.items;
 
+          // if category has no playlist
+
 
           // foreach categorys playlist / add that playlist to an <li> / Add that <li> to the categorys <ul>
           playListItems.forEach(item => {
+
             let playlistClone = playlists.content.cloneNode(true);
             playlistClone.querySelector("p").textContent = item.name;
             playlistClone
@@ -80,16 +83,33 @@ const answer = async () => {
               detailColors[ColorGenerator];
             document.querySelector(`.${genre.id}`).appendChild(playlistClone);
           });
+
+
         } catch (error) {
           console.error(error);
         }
+
       };
 
       // Ivokes the 2nd fetch for playlists
       getPlaylist();
     });
+
     const targets = document.querySelectorAll("img");
     targets.forEach(lazyLoad);
+
+    const ullist = document.querySelectorAll(".summary__list ");
+
+    setTimeout(() => {
+      ullist.forEach(item => {
+        if (item.childElementCount < 1) {
+          item.parentElement.style.display = "none"
+        }
+
+      })
+    }, 300);
+
+
   } catch (error) {
     // Callbacks if Token has run out
     console.log(error);
@@ -98,6 +118,7 @@ const answer = async () => {
     getPlaylist();
   }
 };
+
 
 
 // document.querySelector(".nav__search").addEventListener("keydown", async () => {
@@ -122,7 +143,13 @@ const answer = async () => {
 
 //   }
 // })
-
+// let search = document.querySelector(".nav__search");
+// let searchContainer = document.querySelector("#searchContainer");
+// console.log(searchContainer)
+// search.addEventListener("click", () => {
+//   search.querySelector("svg").classList.toggle("display")
+//   searchContainer.classList.toggle("display")
+// })
 
 
 answer();

@@ -4,6 +4,14 @@
   font-size: 25pt;
 }
 
+// .nav__input {
+//   display: none;
+// }
+
+// .display {
+//   display: none;
+// }
+
 details {
   margin: 1rem auto;
   width: 100%;
@@ -117,10 +125,12 @@ summary {
       color: var(--font-color);
     }
   }
+
   // .summary__item p {
   //   max-width: 80%;
   // }
 }
+
 .main__categories {
   margin-bottom: 15vh;
 }
@@ -162,8 +172,7 @@ summary {
 }
 
 .slide-in-bck-center {
-  -webkit-animation: slide-in-bck-center 0.9s
-    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -webkit-animation: slide-in-bck-center 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-in-bck-center 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
