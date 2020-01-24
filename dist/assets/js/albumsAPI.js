@@ -1,5 +1,5 @@
 import request from "/assets/js/postModule.js";
-
+import lazyLoad from "/assets/js/lazyLoad.js";
 const main = document.querySelector(".main__list");
 const mainClone = document.querySelector("#new__album");
 const featuredTemplate = document.querySelector("#featured__album");
@@ -70,6 +70,8 @@ const answer = async () => {
       ).textContent = `${item.total_tracks} Songs`;
       main.appendChild(productClone);
     });
+    const targets = document.querySelectorAll("img");
+    targets.forEach(lazyLoad);
 
   } catch (error) {
     console.log(error)

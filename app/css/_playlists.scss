@@ -18,17 +18,10 @@
     .playlist__galleryitem img {
         filter: contrast(1.3);
         border: 1px solid #000000ba;
-        -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-        animation-delay: 100ms;
-
     }
 
     .playlist__galleryitem_left {
         transform: translateX(-40px);
-        -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-        animation-delay: 50ms;
         filter: contrast(1.3);
         border: 1px solid #000000ba;
 
@@ -36,9 +29,6 @@
 
     .playlist__galleryitem_right {
         transform: translateX(40px);
-        -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-        animation-delay: 50ms;
         filter: contrast(1.3);
         border: 1px solid #000000ba;
     }

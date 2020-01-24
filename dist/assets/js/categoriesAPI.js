@@ -1,8 +1,10 @@
 import request from "/assets/js/postModule.js";
-
+import lazyLoad from "/assets/js/lazyLoad.js";
 const template = document.querySelector("#details__template");
 const main = document.querySelector(".main__categories");
 const playlists = document.querySelector("#details__playlists");
+
+
 
 const detailColors = [
   "#FF1168",
@@ -63,6 +65,7 @@ const answer = async () => {
           const fetchedPlaylists = await playListData.json();
           let playListItems = fetchedPlaylists.playlists.items;
 
+
           // foreach categorys playlist / add that playlist to an <li> / Add that <li> to the categorys <ul>
           playListItems.forEach(item => {
             let playlistClone = playlists.content.cloneNode(true);
@@ -85,6 +88,8 @@ const answer = async () => {
       // Ivokes the 2nd fetch for playlists
       getPlaylist();
     });
+    const targets = document.querySelectorAll("img");
+    targets.forEach(lazyLoad);
   } catch (error) {
     // Callbacks if Token has run out
     console.log(error);
@@ -93,5 +98,31 @@ const answer = async () => {
     getPlaylist();
   }
 };
+
+
+// document.querySelector(".nav__search").addEventListener("keydown", async () => {
+//   let search = document.querySelector(".nav__search input").value
+//   console.log(search)
+//   try {
+//     let refreshToken = sessionStorage.getItem("refresh");
+//     const data = await fetch(
+//       `https://api.spotify.com/v1/search?q=${search}&type=track%2Cartist%2Calbum%2Cplaylist`, // Fetch Wanted Data
+//       {
+//         method: "GET",
+//         headers: {
+//           Authorization: "Bearer " + refreshToken
+//         },
+//         json: true
+//       }
+//     );
+
+//     const result = await data.json();
+//     console.log(result);
+//   } catch {
+
+//   }
+// })
+
+
 
 answer();

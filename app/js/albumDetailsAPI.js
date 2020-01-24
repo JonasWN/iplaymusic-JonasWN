@@ -1,5 +1,5 @@
 import request from "/assets/js/postModule.js";
-
+import lazyLoad from "/assets/js/lazyLoad.js";
 const paramsID = new URLSearchParams(window.location.search);
 const id = paramsID.get("id");
 
@@ -64,7 +64,8 @@ const answer = async () => {
             productClone.querySelector(".main__thumb").style.border = "none"
             elements.songList.appendChild(productClone)
         })
-
+        const targets = document.querySelectorAll("img");
+        targets.forEach(lazyLoad);
     } catch (error) {
         console.log(error)
         request()

@@ -1,4 +1,5 @@
 import request from "/assets/js/postModule.js";
+import lazyLoad from "/assets/js/lazyLoad.js";
 
 const main = document.querySelector(".main__playingIcon");
 const paramsID = new URLSearchParams(window.location.search);
@@ -8,9 +9,9 @@ function millisToMinutesAndSeconds(millis) {
   // millis to min / seconds
   const minutes = Math.floor(millis / 60000);
   const seconds = ((millis % 60000) / 1000).toFixed(0);
-  return seconds == 60
-    ? minutes + 1 + ":00"
-    : minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+  return seconds == 60 ?
+    minutes + 1 + ":00" :
+    minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
 
 const answer = async () => {
@@ -46,6 +47,9 @@ const answer = async () => {
     document.querySelector(".title__heading").textContent = result.name;
     document.querySelector(".title__underTitle").textContent =
       result.artists[0].name;
+
+    const targets = document.querySelectorAll("img");
+    targets.forEach(lazyLoad);
   } catch (error) {
     console.error(error);
     request();
