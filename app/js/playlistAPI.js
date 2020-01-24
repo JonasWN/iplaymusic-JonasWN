@@ -67,17 +67,19 @@ const answer = async () => {
       main.appendChild(productClone);
     });
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> parent of b1a7496... categories done
     const targets = document.querySelectorAll("img");
-
     targets.forEach(lazyLoad);
 
-
   } catch (error) {
-    console.log(error.message);
+    console.error(error);
     request();
+<<<<<<< HEAD
     answer()
 =======
   } catch (error) {
@@ -85,6 +87,9 @@ const answer = async () => {
     request();
     answer();
 >>>>>>> 889eca45415b8352bf3f43cb8a2131251c7b2920
+=======
+    answer();
+>>>>>>> parent of b1a7496... categories done
   }
 };
 

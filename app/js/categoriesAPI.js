@@ -23,7 +23,7 @@ const answer = async () => {
   try {
     let refreshToken = sessionStorage.getItem("refresh");
     const data = await fetch(
-      `https://api.spotify.com/v1/browse/categories?country=DK&limit=50`, // Fetch Wanted Data
+      `https://api.spotify.com/v1/browse/categories`, // Fetch Wanted Data
       {
         method: "GET",
         headers: {
@@ -66,17 +66,18 @@ const answer = async () => {
           let playListItems = fetchedPlaylists.playlists.items;
 <<<<<<< HEAD
 
-          // if category has no playlist
-
 
           // foreach categorys playlist / add that playlist to an <li> / Add that <li> to the categorys <ul>
           playListItems.forEach(item => {
+<<<<<<< HEAD
 
 =======
 
           // foreach categorys playlist / add that playlist to an <li> / Add that <li> to the categorys <ul>
           playListItems.forEach(item => {
 >>>>>>> 889eca45415b8352bf3f43cb8a2131251c7b2920
+=======
+>>>>>>> parent of b1a7496... categories done
             let playlistClone = playlists.content.cloneNode(true);
             playlistClone.querySelector("p").textContent = item.name;
             playlistClone
@@ -90,6 +91,7 @@ const answer = async () => {
             document.querySelector(`.${genre.id}`).appendChild(playlistClone);
           });
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
         } catch (error) {
@@ -101,27 +103,18 @@ const answer = async () => {
           console.error(error);
         }
 >>>>>>> 889eca45415b8352bf3f43cb8a2131251c7b2920
+=======
+        } catch (error) {
+          console.error(error);
+        }
+>>>>>>> parent of b1a7496... categories done
       };
 
       // Ivokes the 2nd fetch for playlists
       getPlaylist();
     });
-
     const targets = document.querySelectorAll("img");
     targets.forEach(lazyLoad);
-
-    const ullist = document.querySelectorAll(".summary__list ");
-
-    setTimeout(() => {
-      ullist.forEach(item => {
-        if (item.childElementCount < 1) {
-          item.parentElement.style.display = "none"
-        }
-
-      })
-    }, 300);
-
-
   } catch (error) {
     // Callbacks if Token has run out
     console.log(error);
@@ -130,7 +123,6 @@ const answer = async () => {
     getPlaylist();
   }
 };
-
 
 
 // document.querySelector(".nav__search").addEventListener("keydown", async () => {
@@ -155,13 +147,7 @@ const answer = async () => {
 
 //   }
 // })
-// let search = document.querySelector(".nav__search");
-// let searchContainer = document.querySelector("#searchContainer");
-// console.log(searchContainer)
-// search.addEventListener("click", () => {
-//   search.querySelector("svg").classList.toggle("display")
-//   searchContainer.classList.toggle("display")
-// })
+
 
 
 answer();

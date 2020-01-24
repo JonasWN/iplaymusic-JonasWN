@@ -19,7 +19,7 @@ const answer = async () => {
 
     let refreshToken = sessionStorage.getItem("refresh")
     const data = await fetch(
-      "https://api.spotify.com/v1/browse/featured-playlists?limit=50", // Fetch Wanted Data
+      "https://api.spotify.com/v1/browse/featured-playlists", // Fetch Wanted Data
       {
         method: "GET",
         headers: {
