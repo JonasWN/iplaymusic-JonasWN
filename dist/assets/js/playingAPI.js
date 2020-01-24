@@ -1,8 +1,5 @@
 import request from "/assets/js/postModule.js";
-<<<<<<< HEAD
 import lazyLoad from "/assets/js/lazyLoad.js";
-=======
->>>>>>> 889eca45415b8352bf3f43cb8a2131251c7b2920
 
 const main = document.querySelector(".main__playingIcon");
 const paramsID = new URLSearchParams(window.location.search);
@@ -12,15 +9,9 @@ function millisToMinutesAndSeconds(millis) {
   // millis to min / seconds
   const minutes = Math.floor(millis / 60000);
   const seconds = ((millis % 60000) / 1000).toFixed(0);
-<<<<<<< HEAD
   return seconds == 60 ?
     minutes + 1 + ":00" :
     minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-=======
-  return seconds == 60
-    ? minutes + 1 + ":00"
-    : minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
->>>>>>> 889eca45415b8352bf3f43cb8a2131251c7b2920
 }
 
 const answer = async () => {
@@ -56,12 +47,9 @@ const answer = async () => {
     document.querySelector(".title__heading").textContent = result.name;
     document.querySelector(".title__underTitle").textContent =
       result.artists[0].name;
-<<<<<<< HEAD
 
     const targets = document.querySelectorAll("img");
     targets.forEach(lazyLoad);
-=======
->>>>>>> 889eca45415b8352bf3f43cb8a2131251c7b2920
   } catch (error) {
     console.error(error);
     request();
@@ -69,8 +57,4 @@ const answer = async () => {
   }
 };
 
-<<<<<<< HEAD
 answer();
-=======
-answer();
->>>>>>> 889eca45415b8352bf3f43cb8a2131251c7b2920
