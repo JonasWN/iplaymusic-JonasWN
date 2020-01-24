@@ -64,6 +64,7 @@ const answer = async () => {
 
           const fetchedPlaylists = await playListData.json();
           let playListItems = fetchedPlaylists.playlists.items;
+<<<<<<< HEAD
 
           // if category has no playlist
 
@@ -71,6 +72,11 @@ const answer = async () => {
           // foreach categorys playlist / add that playlist to an <li> / Add that <li> to the categorys <ul>
           playListItems.forEach(item => {
 
+=======
+
+          // foreach categorys playlist / add that playlist to an <li> / Add that <li> to the categorys <ul>
+          playListItems.forEach(item => {
+>>>>>>> 889eca45415b8352bf3f43cb8a2131251c7b2920
             let playlistClone = playlists.content.cloneNode(true);
             playlistClone.querySelector("p").textContent = item.name;
             playlistClone
@@ -83,12 +89,18 @@ const answer = async () => {
               detailColors[ColorGenerator];
             document.querySelector(`.${genre.id}`).appendChild(playlistClone);
           });
+<<<<<<< HEAD
 
 
         } catch (error) {
           console.error(error);
         }
 
+=======
+        } catch (error) {
+          console.error(error);
+        }
+>>>>>>> 889eca45415b8352bf3f43cb8a2131251c7b2920
       };
 
       // Ivokes the 2nd fetch for playlists

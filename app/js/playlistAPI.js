@@ -11,9 +11,9 @@ function millisToMinutesAndSeconds(millis) {
   // millis to min / seconds
   const minutes = Math.floor(millis / 60000);
   const seconds = ((millis % 60000) / 1000).toFixed(0);
-  return seconds == 60 ?
-    minutes + 1 + ":00" :
-    minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+  return seconds == 60
+    ? minutes + 1 + ":00"
+    : minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
 
 // GET Data
@@ -66,6 +66,7 @@ const answer = async () => {
       ).textContent = millisToMinutesAndSeconds(item.track.duration_ms);
       main.appendChild(productClone);
     });
+<<<<<<< HEAD
 
 
 
@@ -78,6 +79,12 @@ const answer = async () => {
     console.log(error.message);
     request();
     answer()
+=======
+  } catch (error) {
+    console.error(error);
+    request();
+    answer();
+>>>>>>> 889eca45415b8352bf3f43cb8a2131251c7b2920
   }
 };
 
