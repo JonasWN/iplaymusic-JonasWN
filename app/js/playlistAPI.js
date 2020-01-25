@@ -63,6 +63,11 @@ const answer = async () => {
         main.appendChild(productClone);
       }
     });
+    document
+      .querySelector(".is-selected img")
+      .setAttribute("data-lazy", result.images[0].url);
+    document.querySelector(".is-selected").style.display = "block";
+
     document.querySelector("main").style.display = "block";
     document.querySelector(".loader").style.display = "none";
     const targets = document.querySelectorAll("img");
@@ -102,16 +107,21 @@ const answer2 = async () => {
       sliderItem
         .querySelector("img")
         .setAttribute("data-lazy", item.images[0].url);
+      sliderItem.querySelector("img").classList.add(`${item.id}`);
       caruo.appendChild(sliderItem);
     });
 
+    const targets = document.querySelectorAll("img");
+    targets.forEach(lazyLoad);
     var elem = document.querySelector(".carousel");
+
     var flkty = new Flickity(elem, {
       // options
       cellAlign: "center",
       contain: true,
       wrapAround: true
     });
+    document.querySelector(".is-selected").style.display = "none";
   } catch (error) {
     request();
     answer2();

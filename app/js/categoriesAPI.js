@@ -130,6 +130,6 @@ setTimeout(() => {
       item.parentElement.style.display = "none";
     }
   });
-}, 300);
+}, 600);
 
 answer();
