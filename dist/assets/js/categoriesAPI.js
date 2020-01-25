@@ -1,12 +1,12 @@
 import request from "/assets/js/postModule.js";
-
+import lazyLoad from "/assets/js/lazyLoad.js";
 const template = document.querySelector("#details__template");
 const main = document.querySelector(".main__categories");
 const playlists = document.querySelector("#details__playlists");
 
 const detailColors = [
   "#FF1168",
-  "##E54028",
+  "#E54028",
   "#F18D05",
   "#F2BC06",
   "#5EB11C",
@@ -21,7 +21,7 @@ const answer = async () => {
   try {
     let refreshToken = sessionStorage.getItem("refresh");
     const data = await fetch(
-      `https://api.spotify.com/v1/browse/categories`, // Fetch Wanted Data
+      `https://api.spotify.com/v1/browse/categories?limit=50&country=DK`, // Fetch Wanted Data
       {
         method: "GET",
         headers: {
@@ -85,6 +85,11 @@ const answer = async () => {
       // Ivokes the 2nd fetch for playlists
       getPlaylist();
     });
+
+    document.querySelector("main").style.display = "block";
+    document.querySelector(".loader").style.display = "none";
+    const targets = document.querySelectorAll("img");
+    targets.forEach(lazyLoad);
   } catch (error) {
     // Callbacks if Token has run out
     console.log(error);
@@ -93,5 +98,38 @@ const answer = async () => {
     getPlaylist();
   }
 };
+
+// document.querySelector(".nav__search").addEventListener("keydown", async () => {
+//   let search = document.querySelector(".nav__search input").value
+//   console.log(search)
+//   try {
+//     let refreshToken = sessionStorage.getItem("refresh");
+//     const data = await fetch(
+//       `https://api.spotify.com/v1/search?q=${search}&type=track%2Cartist%2Calbum%2Cplaylist`, // Fetch Wanted Data
+//       {
+//         method: "GET",
+//         headers: {
+//           Authorization: "Bearer " + refreshToken
+//         },
+//         json: true
+//       }
+//     );
+
+//     const result = await data.json();
+//     console.log(result);
+//   } catch {
+
+//   }
+// })
+
+setTimeout(() => {
+  const ullist = document.querySelectorAll(".summary__list");
+
+  ullist.forEach(item => {
+    if (item.childElementCount < 1) {
+      item.parentElement.style.display = "none";
+    }
+  });
+}, 600);
 
 answer();

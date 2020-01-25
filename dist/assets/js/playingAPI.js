@@ -1,4 +1,5 @@
 import request from "/assets/js/postModule.js";
+import lazyLoad from "/assets/js/lazyLoad.js";
 
 const main = document.querySelector(".main__playingIcon");
 const paramsID = new URLSearchParams(window.location.search);
@@ -35,7 +36,6 @@ const answer = async () => {
     main.style.backgroundRepeat = `no-repeat`;
     main.style.backgroundSize = `contain`;
     main.style.backgroundAttachment = "scroll";
-    main.style.filter = "contrast(1.3) saturate(1.2)";
     main.style.borderLeft = "1px solid #000";
     main.style.borderRight = "1px solid #000";
 
@@ -46,6 +46,11 @@ const answer = async () => {
     document.querySelector(".title__heading").textContent = result.name;
     document.querySelector(".title__underTitle").textContent =
       result.artists[0].name;
+
+    const targets = document.querySelectorAll("img");
+    targets.forEach(lazyLoad);
+    document.querySelector("main").style.display = "block";
+    document.querySelector(".loader").style.display = "none";
   } catch (error) {
     console.error(error);
     request();

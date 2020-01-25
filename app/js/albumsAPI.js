@@ -1,5 +1,5 @@
 import request from "/assets/js/postModule.js";
-
+import lazyLoad from "/assets/js/lazyLoad.js";
 const main = document.querySelector(".main__list");
 const mainClone = document.querySelector("#new__album");
 const featuredTemplate = document.querySelector("#featured__album");
@@ -10,10 +10,8 @@ const id = paramsID.get("id");
 
 // GET Data
 const answer = async () => {
-
   try {
-
-    let refreshToken = sessionStorage.getItem("refresh")
+    let refreshToken = sessionStorage.getItem("refresh");
     const data = await fetch(
       `https://api.spotify.com/v1/browse/new-releases`, // Fetch Wanted Data
       {
@@ -50,7 +48,8 @@ const answer = async () => {
     // new realease
     albums.forEach(item => {
       let nameString = item.name;
-      let name = nameString.slice(0, 12) + (nameString.length > 15 ? "..." : "");
+      let name =
+        nameString.slice(0, 12) + (nameString.length > 15 ? "..." : "");
 
       let productClone = mainClone.content.cloneNode(true);
       productClone
@@ -70,13 +69,15 @@ const answer = async () => {
       ).textContent = `${item.total_tracks} Songs`;
       main.appendChild(productClone);
     });
-
+    document.querySelector("main").style.display = "block";
+    document.querySelector(".loader").style.display = "none";
+    const targets = document.querySelectorAll("img");
+    targets.forEach(lazyLoad);
   } catch (error) {
-    console.log(error)
-    request()
+    console.log(error);
+    request();
     answer();
   }
-}
-
+};
 
 answer();

@@ -1,14 +1,13 @@
 import request from "/assets/js/postModule.js";
-
+import lazyLoad from "/assets/js/lazyLoad.js";
 const indexClone = document.querySelector("#main__template");
 const mainList = document.querySelector(".index__Main");
-const targets = document.querySelectorAll("img");
+
 // GET Data
+
 const answer = async () => {
-
   try {
-
-    let refreshToken = sessionStorage.getItem("refresh")
+    let refreshToken = sessionStorage.getItem("refresh");
     const data = await fetch(
       "https://api.spotify.com/v1/browse/featured-playlists", // Fetch Wanted Data
       {
@@ -21,8 +20,7 @@ const answer = async () => {
     );
 
     const result = await data.json();
-    console.log(result)
-
+    console.log(result);
 
     if (result.playlists.items) {
       const featuredList = result.playlists.items;
@@ -40,12 +38,14 @@ const answer = async () => {
         mainList.appendChild(productClone);
       });
     }
-
+    document.querySelector(".loader").style.display = "none";
+    const targets = document.querySelectorAll("img");
+    targets.forEach(lazyLoad);
   } catch (error) {
-    request()
+    request();
     answer();
   }
-}
+};
 
 answer();
 

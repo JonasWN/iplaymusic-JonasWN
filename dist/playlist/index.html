@@ -7,10 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="shortcut icon" href="/assets/images/music-logo-solid.png">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <title>iPlayMusic</title>
 </head>
 
 <body class="body">
+
     <div class="wrapper">
 <header class="Title__header">
     <nav class="title__nav">
@@ -38,63 +40,30 @@
     <h1 class="Title__heading_white">Playlists</h1>
     <img data-lazy="/assets/images/sound-wave.svg" alt="Vector-Graphic-Background" class="title__vectorGraphic">
 
+    <ul class="carousel">
 
-    <ul class="playlist__galleryList">
-        <li class="playlist__galleryitem_left"><img data-lazy="/assets/images/pexels-photo-442540.png"
-                alt="Header-Playlist-Gallary">
-        </li>
-        <li class="playlist__galleryitem"><img data-lazy="/assets/images/photo-1545224144-b38cd309ef69.png"
-                alt="Header-Playlist-Gallary"></li>
-        <li class="playlist__galleryitem_right"><img data-lazy="/assets/images/pexels-photo-949274.png"
-                alt="Header-Playlist-Gallary">
-        </li>
     </ul>
 
 </header>
+
+
 
 <main class="main__songs main__albumList main__playList">
     <h3 class="main__title_playlist">
         Top 50 <br>
         Rock Ballads
     </h3>
-    <ul class="main__songsList">
-        <!-- <li class="main__item">
-            <a href="/playing"><img data-lazy="/assets/images/Group 422.svg" alt="Album-cover" class="main__thumb"></a>
-            <div class="main__imgText">
-                <h4 class="main__itemHeader">Old Town Road</h4>
-                <p class="main__itemText">Billy Ray Cyrus</p>
-            </div>
-            <p class="main__songCount">3:54</p>
-        </li>
-        <li class="main__item">
-            <a href="/playing"><img data-lazy="/assets/images/Group 422.svg" alt="Album-cover" class="main__thumb"></a>
-            <div class="main__imgText">
-                <h4 class="main__itemHeader">Victory Lap</h4>
-                <p class="main__itemText">Nipsey Hussle</p>
-            </div>
-            <p class="main__songCount">2:48</p>
-        </li>
-        <li class="main__item">
-            <a href="/playing"><img data-lazy="/assets/images/Group 422.svg" alt="Album-cover" class="main__thumb"></a>
-            <div class="main__imgText">
-                <h4 class="main__itemHeader">Thank U, Next</h4>
-                <p class="main__itemText">Ariana Grande</p>
-            </div>
-            <p class="main__songCount">4:15</p>
-        </li>
-        <li class="main__item">
-            <a href="/playing"><img data-lazy="/assets/images/Group 422.svg" alt="Album-cover" class="main__thumb"></a>
-            <div class="main__imgText">
-                <h4 class="main__itemHeader">Death Race For Love</h4>
-                <p class="main__itemText">Juice WRLD</p>
-            </div>
-            <p class="main__songCount">2:30</p>
-        </li> -->
-    </ul>
+    <ul class="main__songsList"></ul>
     <a href="/playing" class="main__listenAll"> <button class="listenAll__button"> Listen All</button></a>
 </main>
 
 
+
+<template id="sliderTemplate">
+    <li class="carousel-cell">
+        <img alt="playlist cover">
+    </li>
+</template>
 
 <template id="mainTemplate">
     <li class="main__item">
@@ -107,6 +76,10 @@
     </li>
 </template>
 
+<div class="loader loader-1">
+    <div class="loader-outter"></div>
+    <div class="loader-inner"></div>
+</div>
 <footer class="footer__fixed">
     <ul class="footer__list ul">
         <li class="footer__item"> <a href="/albums?theme=_ionicons_svg_ios-pulse"> <svg class="item__img"
@@ -178,6 +151,9 @@
         </li>
     </ul>
 </footer>
+
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="/assets/js/playlistAPI.js" defer type="module"></script>
         <!-- wrapper-ends -->
         </div>
@@ -186,7 +162,6 @@
         <script src="/assets/js/themeMode.js" defer></script>
         <script src="/assets/js/quicklink.js" defer></script>
         <script src="/assets/js/lazyLoad.js" defer type="module"></script>
-
         </body>
 
         </html>
