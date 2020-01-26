@@ -69,10 +69,20 @@ const answer = async () => {
             playlistClone.querySelector("p").textContent = item.name;
             playlistClone
               .querySelector("a")
-              .setAttribute("href", `/playlist?id=${item.id}`);
+              .setAttribute(
+                "href",
+                `/playlist?name=categories/${genre.id}/playlists&id=${
+                  item.id
+                }&position=${playListItems.indexOf(item)}`
+              );
             playlistClone
               .querySelector("#icon__link")
-              .setAttribute("href", `/playlist?id=${item.id}`);
+              .setAttribute(
+                "href",
+                `/playlist?name=categories/${genre.id}/playlists&id=${
+                  item.id
+                }&position=${playListItems.indexOf(item)}`
+              );
             playlistClone.querySelector("#icon__link path").style.fill =
               detailColors[ColorGenerator];
             document.querySelector(`.${genre.id}`).appendChild(playlistClone);
@@ -126,8 +136,8 @@ setTimeout(() => {
   const ullist = document.querySelectorAll(".summary__list");
 
   ullist.forEach(item => {
-    if (item.childElementCount < 1) {
-      item.parentElement.style.display = "none";
+    if (item.childElementCount < 3) {
+      item.parentElement.remove();
     }
   });
 }, 600);

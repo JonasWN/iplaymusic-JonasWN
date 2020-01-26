@@ -30,12 +30,17 @@ const answer = async () => {
           .querySelector("a")
           .setAttribute(
             "href",
-            `/playlist?id=${item.id}&theme=_ionicons_svg_ios-microphone`
+            `/playlist?name=featured-playlists&id=${
+              item.id
+            }&position=${featuredList.indexOf(
+              item
+            )}&theme=_ionicons_svg_ios-microphone`
           );
         productClone
           .querySelector(".main__img img")
           .setAttribute("data-lazy", item.images[0].url);
         mainList.appendChild(productClone);
+        console.log(featuredList.indexOf(item));
       });
     }
     document.querySelector(".loader").style.display = "none";
