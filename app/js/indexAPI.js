@@ -30,7 +30,7 @@ const answer = async () => {
           .querySelector("a")
           .setAttribute(
             "href",
-            `/playlist?id=${item.id}&theme=_ionicons_svg_ios-microphone`
+            `/playlist?id=featured-playlists&name=${item.id}&theme=_ionicons_svg_ios-microphone`
           );
         productClone
           .querySelector(".main__img img")
