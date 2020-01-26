@@ -53,7 +53,6 @@ const answer = async () => {
       cellAlign: "center",
       contain: true,
       wrapAround: true,
-
       on: {
         ready: async function() {
           console.log("Flickity is ready");
@@ -75,8 +74,6 @@ const answer = async () => {
             console.log(result);
 
             flkty.selectCell(parseInt(position));
-
-            console.log(result.images[0].url);
 
             const tracks = result.tracks.items;
 
@@ -117,7 +114,6 @@ const answer = async () => {
           } catch (error) {}
         },
         change: async function(index) {
-          console.log("Slide changed to" + index);
           document.querySelector("main").style.display = "none";
           document.querySelector(".loader").style.display = "block";
           try {
@@ -149,7 +145,7 @@ const answer = async () => {
               result.name;
 
             const tracks = result.tracks.items;
-            console.log;
+
             //foreach item
             tracks.forEach(item => {
               if (item.track) {
