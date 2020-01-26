@@ -53,6 +53,8 @@ const answer = async () => {
       cellAlign: "center",
       contain: true,
       wrapAround: true,
+      selectedAttraction: 0.01,
+      friction: 0.15,
       on: {
         ready: async function() {
           console.log("Flickity is ready");
@@ -113,7 +115,7 @@ const answer = async () => {
             targets.forEach(lazyLoad);
           } catch (error) {}
         },
-        change: async function(index) {
+        settle: async function(index) {
           document.querySelector("main").style.display = "none";
           document.querySelector(".loader").style.display = "block";
           try {
