@@ -71,11 +71,18 @@ const answer = async () => {
               .querySelector("a")
               .setAttribute(
                 "href",
-                `/playlist?id=categories/${genre.id}/playlists&name=${item.id}`
+                `/playlist?name=categories/${genre.id}/playlists&id=${
+                  item.id
+                }&position=${playListItems.indexOf(item)}`
               );
             playlistClone
               .querySelector("#icon__link")
-              .setAttribute("href", `/playlist?id=${genre.id}&name=${item.id}`);
+              .setAttribute(
+                "href",
+                `/playlist?name=categories/${genre.id}/playlists&id=${
+                  item.id
+                }&position=${playListItems.indexOf(item)}`
+              );
             playlistClone.querySelector("#icon__link path").style.fill =
               detailColors[ColorGenerator];
             document.querySelector(`.${genre.id}`).appendChild(playlistClone);
