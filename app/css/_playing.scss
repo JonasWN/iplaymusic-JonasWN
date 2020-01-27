@@ -7,13 +7,14 @@
   // background-size: cover;
   // background-attachment: fixed;
   overflow: hidden;
-
+  background: #101218;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: minmax(0px, 500px) 1fr;
 }
 
-.Title__header {}
+.Title__header {
+}
 
 .main__playingIcon {
   overflow: hidden;
@@ -51,7 +52,7 @@
   .sectionSlider__slider {
     width: 100%;
     height: 6px;
-    background: #FF1168;
+    background: #ff1168;
     margin: 35px 0;
     position: relative;
     -webkit-appearance: none;
@@ -130,7 +131,8 @@
 .main__playingIcon {
   position: relative;
   transform: scaleY(0);
-  animation: height 1s both cubic-bezier(0.5, -0.06, 0, 1.1), blur 200ms both ease-out .6s;
+  animation: height 1s both cubic-bezier(0.5, -0.06, 0, 1.1),
+    blur 200ms both ease-out 0.6s;
 }
 
 .footerPlayOptions {
@@ -471,13 +473,10 @@
     width: 0px;
   }
 
-
   100% {
     width: 100%;
   }
 }
-
-
 
 .carousel {
   margin: 0;
@@ -487,21 +486,23 @@
   }
 }
 
+// main .carousel-cell-playing img {
+//   height: 100%
+// }
 
-
-main .carousel-cell {
+main .carousel-cell-playing {
   width: 100%;
   /* full width */
-  height: 160px;
+  height: 45vh;
   /* height of carousel */
   margin-right: 10px;
 }
 
 .tracking-in-contract {
-  -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-  animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  -webkit-animation: tracking-in-contract 0.8s
+    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
-
 
 @-webkit-keyframes tracking-in-contract {
   0% {
@@ -536,6 +537,7 @@ main .carousel-cell {
 }
 
 .title__heading {
-  -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-  animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  -webkit-animation: tracking-in-contract 0.8s
+    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }

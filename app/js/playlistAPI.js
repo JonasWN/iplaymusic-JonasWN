@@ -1,7 +1,6 @@
 import request from "/assets/js/postModule.js";
 import lazyLoad from "/assets/js/lazyLoad.js";
 
-
 const main = document.querySelector(".main__songsList");
 const mainClone = document.querySelector("#mainTemplate");
 const paramsID = new URLSearchParams(window.location.search);
@@ -9,14 +8,13 @@ const id = paramsID.get("id");
 const name = paramsID.get("name");
 const position = paramsID.get("position");
 
-
 function millisToMinutesAndSeconds(millis) {
   // millis to min / seconds
   const minutes = Math.floor(millis / 60000);
   const seconds = ((millis % 60000) / 1000).toFixed(0);
-  return seconds == 60 ?
-    minutes + 1 + ":00" :
-    minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+  return seconds == 60
+    ? minutes + 1 + ":00"
+    : minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
 
 const answer = async () => {
@@ -56,9 +54,9 @@ const answer = async () => {
       contain: true,
       wrapAround: true,
       selectedAttraction: 0.1,
-      friction: 0.40,
+      friction: 0.8,
       on: {
-        ready: async function () {
+        ready: async function() {
           console.log("Flickity is ready");
           console.log(document.querySelector(".is-selected"));
           try {
@@ -82,13 +80,17 @@ const answer = async () => {
             const tracks = result.tracks.items;
 
             tracks.forEach(item => {
-
               if (item.track) {
                 let productClone = mainClone.content.cloneNode(true);
                 productClone
                   .querySelector("a")
-                  .setAttribute("href", `/playing?name=playlists/${id}&id=${item.track.id}&position=${tracks.indexOf(item)}`);
-                console.log(name)
+                  .setAttribute(
+                    "href",
+                    `/playing?name=playlists/${id}&id=${
+                      item.track.id
+                    }&position=${tracks.indexOf(item)}`
+                  );
+                console.log(name);
                 productClone
                   .querySelector(".main__thumb")
                   .setAttribute("data-lazy", item.track.album.images[0].url);
@@ -119,7 +121,7 @@ const answer = async () => {
             targets.forEach(lazyLoad);
           } catch (error) {}
         },
-        change: async function (index) {
+        change: async function(index) {
           document.querySelector("main").style.display = "none";
           document.querySelector(".loader").style.display = "block";
           try {
@@ -158,7 +160,12 @@ const answer = async () => {
                 let productClone = mainClone.content.cloneNode(true);
                 productClone
                   .querySelector("a")
-                  .setAttribute("href", `/playing?name=playlists/${currentSelected}&id=${item.track.id}&position=${tracks.indexOf(item)}`);
+                  .setAttribute(
+                    "href",
+                    `/playing?name=playlists/${currentSelected}&id=${
+                      item.track.id
+                    }&position=${tracks.indexOf(item)}`
+                  );
                 productClone
                   .querySelector(".main__thumb")
                   .setAttribute("data-lazy", item.track.album.images[0].url);

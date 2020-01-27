@@ -1,17 +1,17 @@
 const playButton = document.querySelector("#footer__playButton");
 // const circles = document.querySelectorAll(".circles__waves");
-const songMin = document.querySelector(".songLength__min")
+const songMin = document.querySelector(".songLength__min");
 
 function formatTime(seconds) {
   minutes = Math.floor(seconds / 60);
-  minutes = (minutes >= 10) ? minutes : "0" + minutes;
+  minutes = minutes >= 10 ? minutes : "0" + minutes;
   seconds = Math.floor(seconds % 60);
-  seconds = (seconds >= 10) ? seconds : "0" + seconds;
+  seconds = seconds >= 10 ? seconds : "0" + seconds;
   return minutes + ":" + seconds;
 }
 const sliderback = document.querySelector("#myRange");
-const audioFile = document.querySelector("#myAudio")
-const playButtons = document.querySelectorAll(".footerPlayOptions__item")
+const audioFile = document.querySelector("#myAudio");
+const playButtons = document.querySelectorAll(".footerPlayOptions__item");
 const backwards = document.querySelectorAll(".backwards");
 const forwards = document.querySelectorAll(".forwards");
 
@@ -77,30 +77,29 @@ forwards.forEach(icon => {
 
 setInterval(() => {
   let songTime = formatTime(audioFile.currentTime);
-  sliderback.value = audioFile.currentTime / audioFile.duration * 100;
+  sliderback.value = (audioFile.currentTime / audioFile.duration) * 100;
   // audioFile.currentTime = sliderback.value / audioFile.duration * 100;
-  songMin.textContent = songTime
+  songMin.textContent = songTime;
 }, 100);
-
 
 setTimeout(() => {
-  document.querySelector(".songLength__max").textContent = formatTime(audioFile.duration)
+  document.querySelector(".songLength__max").textContent = formatTime(
+    audioFile.duration
+  );
 }, 100);
 
-const play = (e) => {
-  console.log(e.target)
-
+const play = e => {
+  console.log(e.target);
 
   if (!audioFile.paused) {
-    audioFile.pause()
+    audioFile.pause();
   } else {
-    audioFile.play()
+    audioFile.play();
   }
-
-}
+};
 
 // for (let i = 0; i < playButtons.length; i++) {
 //   playButtons[i].addEventListener("click", play)
 // }
 
-playButton.addEventListener("click", play)
+playButton.addEventListener("click", play);
