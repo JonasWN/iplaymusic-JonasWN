@@ -78,6 +78,7 @@ forwards.forEach(icon => {
 setInterval(() => {
   let songTime = formatTime(audioFile.currentTime);
   sliderback.value = audioFile.currentTime / audioFile.duration * 100;
+  // audioFile.currentTime = sliderback.value / audioFile.duration * 100;
   songMin.textContent = songTime
 }, 100);
 

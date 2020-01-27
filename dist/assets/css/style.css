@@ -829,7 +829,7 @@ a {
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 2fr 1fr; }
+  grid-template-rows: minmax(0px, 500px) 1fr; }
 
 .main__playingIcon .main__centerIcon {
   width: 100%;

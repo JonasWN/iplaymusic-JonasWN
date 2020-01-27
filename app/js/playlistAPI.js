@@ -9,6 +9,7 @@ const id = paramsID.get("id");
 const name = paramsID.get("name");
 const position = paramsID.get("position");
 
+
 function millisToMinutesAndSeconds(millis) {
   // millis to min / seconds
   const minutes = Math.floor(millis / 60000);
@@ -81,21 +82,23 @@ const answer = async () => {
             const tracks = result.tracks.items;
 
             tracks.forEach(item => {
+
               if (item.track) {
                 let productClone = mainClone.content.cloneNode(true);
                 productClone
                   .querySelector("a")
-                  .setAttribute("href", `/playing?id=${item.track.id}`);
+                  .setAttribute("href", `/playing?name=${id}&id=${item.track.id}&position=${tracks.indexOf(item)}`);
+                console.log(name)
                 productClone
                   .querySelector(".main__thumb")
                   .setAttribute("data-lazy", item.track.album.images[0].url);
                 let nameString = item.track.name;
-                let name =
+                let nameStr =
                   nameString.slice(0, 12) +
                   (nameString.length > 15 ? "..." : "");
                 productClone.querySelector(
                   ".main__itemHeader"
-                ).textContent = name;
+                ).textContent = nameStr;
                 productClone.querySelector(".main__itemText").textContent =
                   item.track.artists[0].name;
                 productClone.querySelector(
@@ -155,17 +158,17 @@ const answer = async () => {
                 let productClone = mainClone.content.cloneNode(true);
                 productClone
                   .querySelector("a")
-                  .setAttribute("href", `/playing?id=${item.track.id}`);
+                  .setAttribute("href", `/playing?name=${currentSelected}&id=${item.track.id}&position=${tracks.indexOf(item)}`);
                 productClone
                   .querySelector(".main__thumb")
                   .setAttribute("data-lazy", item.track.album.images[0].url);
                 let nameString = item.track.name;
-                let name =
+                let nameStr =
                   nameString.slice(0, 12) +
                   (nameString.length > 15 ? "..." : "");
                 productClone.querySelector(
                   ".main__itemHeader"
-                ).textContent = name;
+                ).textContent = nameStr;
                 productClone.querySelector(".main__itemText").textContent =
                   item.track.artists[0].name;
                 productClone.querySelector(

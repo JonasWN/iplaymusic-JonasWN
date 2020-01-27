@@ -1,6 +1,7 @@
 import request from "/assets/js/postModule.js";
 import lazyLoad from "/assets/js/lazyLoad.js";
 
+const mainBackground = document.querySelector("#background")
 const main = document.querySelector(".main__playingIcon");
 const paramsID = new URLSearchParams(window.location.search);
 const id = paramsID.get("id");
@@ -31,13 +32,16 @@ const answer = async () => {
     const result = await data.json();
     console.log(result);
 
-    main.style.background = `url(${result.album.images[0].url})`;
-    main.style.backgroundPosition = `top`;
-    main.style.backgroundRepeat = `no-repeat`;
-    main.style.backgroundSize = `contain`;
-    main.style.backgroundAttachment = "scroll";
-    main.style.borderLeft = "1px solid #000";
-    main.style.borderRight = "1px solid #000";
+
+    let producTemplate = mainBackground.content.cloneNode(true);
+    producTemplate.querySelector("img").setAttribute("data-lazy", result.album.images[0].url)
+    producTemplate.querySelector("img").style.filter = "contrast(1.3) saturate(1.2)";
+    producTemplate.querySelector("img").style.border = "1px solid #000";
+    producTemplate.querySelector("img").style.width = "100%"
+    producTemplate.querySelector("img").style.height = "100%"
+    producTemplate.querySelector("img").style.objectFit = "fill";
+    producTemplate.querySelector("img").style.border = "1px solid #000"
+    main.appendChild(producTemplate);
 
     // document.querySelector(
     //   ".songLength__max"
