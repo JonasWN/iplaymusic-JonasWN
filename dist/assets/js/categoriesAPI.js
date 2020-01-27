@@ -42,7 +42,7 @@ const answer = async () => {
       let productClone = template.content.cloneNode(true);
       productClone.querySelector("summary").textContent = genre.name;
       productClone.querySelector("summary").style.background =
-        detailColors[ColorGenerator];
+        detailColors[categoriesList.indexOf(genre) % 9];
       productClone.querySelector(".summary__list").classList.add(genre.id);
       main.appendChild(productClone);
 
@@ -83,8 +83,6 @@ const answer = async () => {
                   item.id
                 }&position=${playListItems.indexOf(item)}`
               );
-            playlistClone.querySelector("#icon__link path").style.fill =
-              detailColors[ColorGenerator];
             document.querySelector(`.${genre.id}`).appendChild(playlistClone);
           });
         } catch (error) {

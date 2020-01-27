@@ -1,8 +1,17 @@
 const playButton = document.querySelector("#footer__playButton");
 // const circles = document.querySelectorAll(".circles__waves");
+const songMin = document.querySelector(".songLength__min");
 
+function formatTime(seconds) {
+  minutes = Math.floor(seconds / 60);
+  minutes = minutes >= 10 ? minutes : "0" + minutes;
+  seconds = Math.floor(seconds % 60);
+  seconds = seconds >= 10 ? seconds : "0" + seconds;
+  return minutes + ":" + seconds;
+}
 const sliderback = document.querySelector("#myRange");
-
+const audioFile = document.querySelector("#myAudio");
+const playButtons = document.querySelectorAll(".footerPlayOptions__item");
 const backwards = document.querySelectorAll(".backwards");
 const forwards = document.querySelectorAll(".forwards");
 
@@ -23,6 +32,7 @@ backwards.forEach(icon => {
       icon.classList.remove("bounce-left");
     }, 200);
     if (icon == backwards[1]) {
+      audioFile.currentTime -= 10;
       sliderback.value -= 10;
       console.log(sliderback.value);
     } else {
@@ -31,6 +41,7 @@ backwards.forEach(icon => {
         console.log("skip to previous song");
       }
       sliderback.value = 0;
+      audioFile.currentTime = 0;
     }
   });
 });
@@ -54,7 +65,7 @@ forwards.forEach(icon => {
       sliderback.value++;
       sliderback.value++;
       sliderback.value++;
-
+      audioFile.currentTime += 10;
       // += 10 dident work
       console.log(sliderback.value);
     } else {
@@ -63,3 +74,32 @@ forwards.forEach(icon => {
     }
   });
 });
+
+setInterval(() => {
+  let songTime = formatTime(audioFile.currentTime);
+  sliderback.value = (audioFile.currentTime / audioFile.duration) * 100;
+  // audioFile.currentTime = sliderback.value / audioFile.duration * 100;
+  songMin.textContent = songTime;
+}, 100);
+
+setTimeout(() => {
+  document.querySelector(".songLength__max").textContent = formatTime(
+    audioFile.duration
+  );
+}, 100);
+
+const play = e => {
+  console.log(e.target);
+
+  if (!audioFile.paused) {
+    audioFile.pause();
+  } else {
+    audioFile.play();
+  }
+};
+
+// for (let i = 0; i < playButtons.length; i++) {
+//   playButtons[i].addEventListener("click", play)
+// }
+
+playButton.addEventListener("click", play);

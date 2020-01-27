@@ -53,8 +53,8 @@ const answer = async () => {
       cellAlign: "center",
       contain: true,
       wrapAround: true,
-      selectedAttraction: 0.01,
-      friction: 0.15,
+      selectedAttraction: 0.1,
+      friction: 0.8,
       on: {
         ready: async function() {
           console.log("Flickity is ready");
@@ -84,17 +84,23 @@ const answer = async () => {
                 let productClone = mainClone.content.cloneNode(true);
                 productClone
                   .querySelector("a")
-                  .setAttribute("href", `/playing?id=${item.track.id}`);
+                  .setAttribute(
+                    "href",
+                    `/playing?name=playlists/${id}&id=${
+                      item.track.id
+                    }&position=${tracks.indexOf(item)}`
+                  );
+                console.log(name);
                 productClone
                   .querySelector(".main__thumb")
                   .setAttribute("data-lazy", item.track.album.images[0].url);
                 let nameString = item.track.name;
-                let name =
+                let nameStr =
                   nameString.slice(0, 12) +
                   (nameString.length > 15 ? "..." : "");
                 productClone.querySelector(
                   ".main__itemHeader"
-                ).textContent = name;
+                ).textContent = nameStr;
                 productClone.querySelector(".main__itemText").textContent =
                   item.track.artists[0].name;
                 productClone.querySelector(
@@ -115,7 +121,7 @@ const answer = async () => {
             targets.forEach(lazyLoad);
           } catch (error) {}
         },
-        settle: async function(index) {
+        change: async function(index) {
           document.querySelector("main").style.display = "none";
           document.querySelector(".loader").style.display = "block";
           try {
@@ -154,17 +160,22 @@ const answer = async () => {
                 let productClone = mainClone.content.cloneNode(true);
                 productClone
                   .querySelector("a")
-                  .setAttribute("href", `/playing?id=${item.track.id}`);
+                  .setAttribute(
+                    "href",
+                    `/playing?name=playlists/${currentSelected}&id=${
+                      item.track.id
+                    }&position=${tracks.indexOf(item)}`
+                  );
                 productClone
                   .querySelector(".main__thumb")
                   .setAttribute("data-lazy", item.track.album.images[0].url);
                 let nameString = item.track.name;
-                let name =
+                let nameStr =
                   nameString.slice(0, 12) +
                   (nameString.length > 15 ? "..." : "");
                 productClone.querySelector(
                   ".main__itemHeader"
-                ).textContent = name;
+                ).textContent = nameStr;
                 productClone.querySelector(".main__itemText").textContent =
                   item.track.artists[0].name;
                 productClone.querySelector(
