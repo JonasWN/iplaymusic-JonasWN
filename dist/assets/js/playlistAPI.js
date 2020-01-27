@@ -1,6 +1,7 @@
 import request from "/assets/js/postModule.js";
 import lazyLoad from "/assets/js/lazyLoad.js";
 
+
 const main = document.querySelector(".main__songsList");
 const mainClone = document.querySelector("#mainTemplate");
 const paramsID = new URLSearchParams(window.location.search);
@@ -12,9 +13,9 @@ function millisToMinutesAndSeconds(millis) {
   // millis to min / seconds
   const minutes = Math.floor(millis / 60000);
   const seconds = ((millis % 60000) / 1000).toFixed(0);
-  return seconds == 60
-    ? minutes + 1 + ":00"
-    : minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+  return seconds == 60 ?
+    minutes + 1 + ":00" :
+    minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
 
 const answer = async () => {
@@ -53,10 +54,10 @@ const answer = async () => {
       cellAlign: "center",
       contain: true,
       wrapAround: true,
-      selectedAttraction: 0.01,
-      friction: 0.15,
+      selectedAttraction: 0.1,
+      friction: 0.40,
       on: {
-        ready: async function() {
+        ready: async function () {
           console.log("Flickity is ready");
           console.log(document.querySelector(".is-selected"));
           try {
@@ -115,7 +116,7 @@ const answer = async () => {
             targets.forEach(lazyLoad);
           } catch (error) {}
         },
-        settle: async function(index) {
+        change: async function (index) {
           document.querySelector("main").style.display = "none";
           document.querySelector(".loader").style.display = "block";
           try {

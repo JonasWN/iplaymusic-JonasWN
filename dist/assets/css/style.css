@@ -598,7 +598,7 @@ summary {
     display: none; }
 
 #_ionicons_svg_ios-arrow-forward {
-  fill: #ff1168;
+  fill: var(--font-color);
   height: 15px; }
 
 .arrow__svg {

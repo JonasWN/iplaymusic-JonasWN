@@ -9,9 +9,9 @@ function millisToMinutesAndSeconds(millis) {
   // millis to min / seconds
   const minutes = Math.floor(millis / 60000);
   const seconds = ((millis % 60000) / 1000).toFixed(0);
-  return seconds == 60
-    ? minutes + 1 + ":00"
-    : minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+  return seconds == 60 ?
+    minutes + 1 + ":00" :
+    minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
 
 const answer = async () => {
@@ -39,9 +39,9 @@ const answer = async () => {
     main.style.borderLeft = "1px solid #000";
     main.style.borderRight = "1px solid #000";
 
-    document.querySelector(
-      ".songLength__max"
-    ).textContent = millisToMinutesAndSeconds(result.duration_ms);
+    // document.querySelector(
+    //   ".songLength__max"
+    // ).textContent = millisToMinutesAndSeconds(result.duration_ms);
 
     document.querySelector(".title__heading").textContent = result.name;
     document.querySelector(".title__underTitle").textContent =
