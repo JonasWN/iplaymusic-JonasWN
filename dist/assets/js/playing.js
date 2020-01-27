@@ -14,6 +14,7 @@ const audioFile = document.querySelector("#myAudio");
 const playButtons = document.querySelectorAll(".footerPlayOptions__item");
 const backwards = document.querySelectorAll(".backwards");
 const forwards = document.querySelectorAll(".forwards");
+const audioVisual = document.querySelector(".loaderIcon");
 
 playButton.addEventListener("click", () => {
   document.querySelector(".triangle").classList.toggle("triangle_clicked");
@@ -93,8 +94,10 @@ const play = e => {
 
   if (!audioFile.paused) {
     audioFile.pause();
+    audioVisual.classList.remove("puff-in-center");
   } else {
     audioFile.play();
+    audioVisual.classList.add("puff-in-center");
   }
 };
 

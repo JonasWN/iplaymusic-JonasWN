@@ -26,7 +26,7 @@
 }
 
 .sectionSlider {
-  padding: 5%;
+  padding: 1% 5% 5% 5%;
   // position: absolute;
   // bottom: 0;
   // left: 0;
@@ -45,12 +45,11 @@
   }
 
   .title__underTitle {
-    color: #ffaa00;
+    color: #7dc6ff;
     font-size: 14pt;
 
-
     .letter {
-      animation: appear .6s linear both;
+      animation: appear 0.6s linear both;
     }
   }
 
@@ -75,7 +74,7 @@
     width: 100%;
     height: 6px;
     background: #ff1168;
-    margin: 35px 0;
+    margin: 25px 0;
     position: relative;
     -webkit-appearance: none;
     border: 1px solid #000;
@@ -152,64 +151,14 @@
 
 .main__playingIcon {
   position: relative;
-  transform: scaleY(0);
-  animation: height 1s both cubic-bezier(0.5, -0.06, 0, 1.1),
-    blur 200ms both ease-out 0.6s;
+  -webkit-animation: height 0.8s cubic-bezier(0.77, 0, 0.175, 1) both 0.4s;
+  animation: height 0.8s cubic-bezier(0.77, 0, 0.175, 1) both 0.4s;
 }
 
 .footerPlayOptions {
   background: rgba(9, 8, 17, 0.96);
   padding: 0 0 5% 0;
 }
-
-// #pexels-photo-1727280-6,
-// #pexels-photo-1727280-5 {
-//   fill: none;
-// }
-
-// .delay-0 {
-//   animation: waves 3.5s linear 4.5s infinite;
-
-// }
-
-// .delay-1 {
-//   animation: waves 3.5s linear 2.5s infinite;
-// }
-
-// .delay-2 {
-//   animation: waves 3.5s linear 1.5s infinite;
-// }
-
-// .delay-3 {
-//   animation: waves 3.5s linear .5s infinite;
-// }
-
-// .circles__waves {
-//   width: 40%;
-//   height: 40%;
-//   background: #FF1168;
-//   position: absolute;
-//   left: 50%;
-//   top: 48%;
-//   transform: translate(-50%, -50%);
-//   z-index: -1;
-//   border-radius: 50%;
-//   transition: 5s ease;
-//   padding-top: 40%;
-//   opacity: 0;
-// }
-
-// @-webkit-keyframes waves {
-//   0% {
-//     transform: translate(-50%, -50%) scale(1);
-//     opacity: 0.5;
-//   }
-
-//   100% {
-//     transform: translate(-50%, -50%) scale(1.5);
-//     opacity: 0;
-//   }
-// }
 
 #footer__playButton {
   -webkit-transition: all 0.5s ease;
@@ -482,11 +431,15 @@
 
 @keyframes height {
   0% {
+    -webkit-transform: scaleY(0);
     transform: scaleY(0);
+    opacity: 1;
   }
 
   100% {
+    -webkit-transform: scaleY(1);
     transform: scaleY(1);
+    opacity: 1;
   }
 }
 
@@ -560,4 +513,215 @@ main .carousel-cell-playing {
 .title__heading {
   -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+.loaderIcon {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  height: 100%;
+  display: flex;
+  margin-top: 2%;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+#wave {
+  height: 70px;
+  width: 70px;
+  fill: #fff;
+}
+
+#Line_1 {
+  -webkit-animation: pulse 1s infinite;
+  animation: pulse 1s infinite;
+  -webkit-animation-delay: 0.15s;
+  animation-delay: 0.15s;
+}
+
+#Line_2 {
+  -webkit-animation: pulse 1s infinite;
+  animation: pulse 1s infinite;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+#Line_3 {
+  -webkit-animation: pulse 1s infinite;
+  animation: pulse 1s infinite;
+  -webkit-animation-delay: 0.45s;
+  animation-delay: 0.45s;
+}
+
+#Line_4 {
+  -webkit-animation: pulse 1s infinite;
+  animation: pulse 1s infinite;
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+#Line_5 {
+  -webkit-animation: pulse 1s infinite;
+  animation: pulse 1s infinite;
+  -webkit-animation-delay: 0.75s;
+  animation-delay: 0.75s;
+}
+
+#Line_6 {
+  -webkit-animation: pulse 1s infinite;
+  animation: pulse 1s infinite;
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+
+#Line_7 {
+  -webkit-animation: pulse 1s infinite;
+  animation: pulse 1s infinite;
+  -webkit-animation-delay: 1.05s;
+  animation-delay: 1.05s;
+}
+
+#Line_8 {
+  -webkit-animation: pulse 1s infinite;
+  animation: pulse 1s infinite;
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+}
+
+#Line_9 {
+  -webkit-animation: pulse 1s infinite;
+  animation: pulse 1s infinite;
+  -webkit-animation-delay: 1.35s;
+  animation-delay: 1.35s;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+
+  50% {
+    -webkit-transform: scaleY(0.7);
+    transform: scaleY(0.7);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+
+  50% {
+    -webkit-transform: scaleY(0.7);
+    transform: scaleY(0.7);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------
+ * Generated by Animista on 2020-1-27 21:34:51
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation puff-in-center
+ * ----------------------------------------
+ */
+@-webkit-keyframes puff-in-center {
+  0% {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes puff-in-center {
+  0% {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    -webkit-filter: blur(4px);
+    filter: blur(4px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+    display: block;
+  }
+}
+
+.puff-in-center {
+  -webkit-animation: puff-in-center 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+  animation: puff-in-center 0.4s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+
 }
