@@ -87,7 +87,7 @@ const answer = async () => {
                 let productClone = mainClone.content.cloneNode(true);
                 productClone
                   .querySelector("a")
-                  .setAttribute("href", `/playing?name=${id}&id=${item.track.id}&position=${tracks.indexOf(item)}`);
+                  .setAttribute("href", `/playing?name=playlists/${id}&id=${item.track.id}&position=${tracks.indexOf(item)}`);
                 console.log(name)
                 productClone
                   .querySelector(".main__thumb")
@@ -158,7 +158,7 @@ const answer = async () => {
                 let productClone = mainClone.content.cloneNode(true);
                 productClone
                   .querySelector("a")
-                  .setAttribute("href", `/playing?name=${currentSelected}&id=${item.track.id}&position=${tracks.indexOf(item)}`);
+                  .setAttribute("href", `/playing?name=playlists/${currentSelected}&id=${item.track.id}&position=${tracks.indexOf(item)}`);
                 productClone
                   .querySelector(".main__thumb")
                   .setAttribute("data-lazy", item.track.album.images[0].url);
