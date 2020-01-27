@@ -8,6 +8,8 @@ const paramsID = new URLSearchParams(window.location.search);
 const name = paramsID.get("name");
 const id = paramsID.get("id");
 const position = paramsID.get("position");
+const title = document.querySelector(".title__heading");
+const titleContainer = document.querySelector(".sectionSlider__title");
 
 function millisToMinutesAndSeconds(millis) {
   // millis to min / seconds
@@ -17,54 +19,6 @@ function millisToMinutesAndSeconds(millis) {
     ? minutes + 1 + ":00"
     : minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
-
-// const answer = async () => {
-//   try {
-//     let refreshToken = sessionStorage.getItem("refresh");
-//     const data = await fetch(
-//       `https://api.spotify.com/v1/tracks/${id}`, // Fetch Wanted Data
-//       {
-//         method: "GET",
-//         headers: {
-//           Authorization: "Bearer " + refreshToken
-//         },
-//         json: true
-//       }
-//     );
-
-//     const result = await data.json();
-//     console.log(result);
-
-//     let producTemplate = mainBackground.content.cloneNode(true);
-//     producTemplate.querySelector("img").setAttribute("data-lazy", result.album.images[0].url)
-//     producTemplate.querySelector("img").style.filter = "contrast(1.3) saturate(1.2)";
-//     producTemplate.querySelector("img").style.border = "1px solid #000";
-//     producTemplate.querySelector("img").style.width = "100%"
-//     producTemplate.querySelector("img").style.height = "100%"
-//     producTemplate.querySelector("img").style.objectFit = "fill";
-//     producTemplate.querySelector("img").style.border = "1px solid #000"
-//     main.appendChild(producTemplate);
-
-//     // document.querySelector(
-//     //   ".songLength__max"
-//     // ).textContent = millisToMinutesAndSeconds(result.duration_ms);
-
-//     document.querySelector(".title__heading").textContent = result.name;
-//     document.querySelector(".title__underTitle").textContent =
-//       result.artists[0].name;
-
-//     const targets = document.querySelectorAll("img");
-//     targets.forEach(lazyLoad);
-//     document.querySelector("main").style.display = "block";
-//     document.querySelector(".loader").style.display = "none";
-//   } catch (error) {
-//     console.error(error);
-//     request();
-//     answer();
-//   }
-// };
-
-// answer();
 
 const answer = async () => {
   try {
@@ -143,15 +97,6 @@ const answer = async () => {
             document.querySelector(".title__heading").textContent = result.name;
             document.querySelector(".title__underTitle").textContent =
               result.artists[0].name;
-            // let producTemplate = mainBackground.content.cloneNode(true);
-            // producTemplate.querySelector("img").setAttribute("data-lazy", result.album.images[0].url)
-            // producTemplate.querySelector("img").style.filter = "contrast(1.3) saturate(1.2)";
-            // producTemplate.querySelector("img").style.border = "1px solid #000";
-            // producTemplate.querySelector("img").style.width = "100%"
-            // producTemplate.querySelector("img").style.height = "100%"
-            // producTemplate.querySelector("img").style.objectFit = "fill";
-            // producTemplate.querySelector("img").style.border = "1px solid #000"
-            // main.appendChild(producTemplate);
           } catch (error) {}
         },
         change: async function(index) {
@@ -170,27 +115,29 @@ const answer = async () => {
           );
 
           const result = await data.json();
+          let nameStr =
+            result.name.slice(0, 10) + (result.name.length > 25 ? "..." : "");
+          title.textContent = nameStr;
+          title.style.animation = "none";
+          title.offsetHeight; /* trigger reflow */
+          title.style.animation = null;
+          let textWrapper = document.querySelector(".title__underTitle");
+          textWrapper.textContent = result.artists[0].name;
 
-          document.querySelector(".title__heading").textContent = result.name;
-          document.querySelector(".title__underTitle").textContent =
-            result.artists[0].name;
+          textWrapper.innerHTML = textWrapper.textContent.replace(
+            /\S/g,
+            "<span class='letter'>$&</span>"
+          );
+          const animatedLetters = document.querySelectorAll(".letter");
+          for (let i = 0; i < animatedLetters.length; i++) {
+            animatedLetters[i].style.animationDelay = "2";
+            animatedLetters[i].style.animation = "none";
+            animatedLetters[i].offsetHeight;
+            animatedLetters[i].style.animation = null;
+          }
         }
       }
     });
-
-    // let producTemplate = mainBackground.content.cloneNode(true);
-    // producTemplate.querySelector("img").setAttribute("data-lazy", result.album.images[0].url)
-    // producTemplate.querySelector("img").style.filter = "contrast(1.3) saturate(1.2)";
-    // producTemplate.querySelector("img").style.border = "1px solid #000";
-    // producTemplate.querySelector("img").style.width = "100%"
-    // producTemplate.querySelector("img").style.height = "100%"
-    // producTemplate.querySelector("img").style.objectFit = "fill";
-    // producTemplate.querySelector("img").style.border = "1px solid #000"
-    // main.appendChild(producTemplate);
-
-    // document.querySelector(".title__heading").textContent = result.name;
-    // document.querySelector(".title__underTitle").textContent =
-    //   result.artists[0].name;
 
     const targets = document.querySelectorAll("img");
     targets.forEach(lazyLoad);
