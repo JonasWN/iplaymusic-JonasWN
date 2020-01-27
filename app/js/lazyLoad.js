@@ -8,6 +8,10 @@ const lazyLoad = target => {
         const src = img.getAttribute("data-lazy");
 
         img.setAttribute("src", src);
+        if (img.classList.contains("main__thumb")) {
+          img.parentElement.classList.add("scale-up-center");
+        }
+
         observer.disconnect();
       }
     });
@@ -15,6 +19,5 @@ const lazyLoad = target => {
 
   io.observe(target);
 };
-
 
 export default lazyLoad;
