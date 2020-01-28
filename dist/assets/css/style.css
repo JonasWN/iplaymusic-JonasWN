@@ -576,7 +576,8 @@ summary {
   font-weight: bold;
   cursor: pointer;
   color: #fff;
-  font-size: 14pt; }
+  font-size: 14pt;
+  box-shadow: 0 5px 14px 0px rgba(0, 0, 0, 0.35); }
   summary:focus {
     outline: none; }
   summary::before, summary::after {
@@ -663,6 +664,30 @@ summary {
   100% {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
+    opacity: 1; } }
+
+.scale-in-ver-center {
+  -webkit-animation: scale-in-ver-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-in-ver-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+
+@-webkit-keyframes scale-in-ver-center {
+  0% {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    opacity: 1; } }
+
+@keyframes scale-in-ver-center {
+  0% {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
     opacity: 1; } }
 
 /* Main-Colors */
@@ -865,9 +890,9 @@ a {
       font-style: italic; }
   .sectionSlider .title__underTitle {
     color: #7dc6ff;
-    font-size: 14pt; }
-    .sectionSlider .title__underTitle .letter {
-      animation: appear 0.6s linear both; }
+    font-size: 14pt;
+    -webkit-animation: text-focus-in 0.3s linear both;
+    animation: text-focus-in 0.3s linear both; }
 
 @keyframes appear {
   0% {
@@ -1134,33 +1159,29 @@ main .carousel-cell-playing {
   /* height of carousel */
   margin-right: 10px; }
 
-.tracking-in-contract {
-  -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-  animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both; }
-
-@-webkit-keyframes tracking-in-contract {
+@-webkit-keyframes text-focus-in {
   0% {
-    letter-spacing: 1em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
     opacity: 0; }
-  40% {
-    opacity: 0.6; }
   100% {
-    letter-spacing: normal;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
     opacity: 1; } }
 
-@keyframes tracking-in-contract {
+@keyframes text-focus-in {
   0% {
-    letter-spacing: 1em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
     opacity: 0; }
-  40% {
-    opacity: 0.6; }
   100% {
-    letter-spacing: normal;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
     opacity: 1; } }
 
 .title__heading {
-  -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-  animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both; }
+  -webkit-animation: text-focus-in 0.3s linear both;
+  animation: text-focus-in 0.3s linear both; }
 
 .loaderIcon {
   display: -webkit-box;
