@@ -15,9 +15,9 @@ function millisToMinutesAndSeconds(millis) {
   // millis to min / seconds
   const minutes = Math.floor(millis / 60000);
   const seconds = ((millis % 60000) / 1000).toFixed(0);
-  return seconds == 60
-    ? minutes + 1 + ":00"
-    : minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+  return seconds == 60 ?
+    minutes + 1 + ":00" :
+    minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
 
 const answer = async () => {
@@ -77,7 +77,7 @@ const answer = async () => {
       wrapAround: true,
       fade: true,
       on: {
-        ready: async function() {
+        ready: async function () {
           try {
             const data = await fetch(
               `https://api.spotify.com/v1/tracks/${id}`, // Fetch Wanted Data
@@ -99,7 +99,7 @@ const answer = async () => {
               result.artists[0].name;
           } catch (error) {}
         },
-        change: async function(index) {
+        change: async function (index) {
           const currentSelected = document.querySelector(".is-selected img").id;
           console.log(currentSelected);
           console.log("Slide changed to" + index);
@@ -121,20 +121,13 @@ const answer = async () => {
           title.style.animation = "none";
           title.offsetHeight; /* trigger reflow */
           title.style.animation = null;
+
           let textWrapper = document.querySelector(".title__underTitle");
           textWrapper.textContent = result.artists[0].name;
+          textWrapper.style.animation = "none";
+          textWrapper.offsetHeight; /* trigger reflow */
+          textWrapper.style.animation = null;
 
-          textWrapper.innerHTML = textWrapper.textContent.replace(
-            /\S/g,
-            "<span class='letter'>$&</span>"
-          );
-          const animatedLetters = document.querySelectorAll(".letter");
-          for (let i = 0; i < animatedLetters.length; i++) {
-            animatedLetters[i].style.animationDelay = "2";
-            animatedLetters[i].style.animation = "none";
-            animatedLetters[i].offsetHeight;
-            animatedLetters[i].style.animation = null;
-          }
         }
       }
     });

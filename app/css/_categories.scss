@@ -48,6 +48,7 @@ summary {
   cursor: pointer;
   color: #fff;
   font-size: 14pt;
+  box-shadow: 0 5px 14px 0px rgba(0, 0, 0, 0.35);
 
   &:focus {
     outline: none;
@@ -187,5 +188,44 @@ summary {
       transform: translateZ(0);
       opacity: 1;
     }
+  }
+}
+
+
+
+
+
+
+.scale-in-ver-center {
+  -webkit-animation: scale-in-ver-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: scale-in-ver-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+@-webkit-keyframes scale-in-ver-center {
+  0% {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in-ver-center {
+  0% {
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    opacity: 1;
   }
 }

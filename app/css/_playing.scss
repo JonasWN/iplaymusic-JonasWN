@@ -48,9 +48,8 @@
     color: #7dc6ff;
     font-size: 14pt;
 
-    .letter {
-      animation: appear 0.6s linear both;
-    }
+    -webkit-animation: text-focus-in 0.3s linear both;
+    animation: text-focus-in 0.3s linear both;
   }
 
   @keyframes appear {
@@ -473,46 +472,43 @@ main .carousel-cell-playing {
   margin-right: 10px;
 }
 
-.tracking-in-contract {
-  -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-  animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-}
 
-@-webkit-keyframes tracking-in-contract {
+
+
+
+@-webkit-keyframes text-focus-in {
   0% {
-    letter-spacing: 1em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
     opacity: 0;
   }
 
-  40% {
-    opacity: 0.6;
-  }
-
   100% {
-    letter-spacing: normal;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
     opacity: 1;
   }
 }
 
-@keyframes tracking-in-contract {
+@keyframes text-focus-in {
   0% {
-    letter-spacing: 1em;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
     opacity: 0;
   }
 
-  40% {
-    opacity: 0.6;
-  }
-
   100% {
-    letter-spacing: normal;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
     opacity: 1;
   }
 }
+
 
 .title__heading {
-  -webkit-animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-  animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  -webkit-animation: text-focus-in 0.3s linear both;
+  animation: text-focus-in 0.3s linear both;
+
 }
 
 .loaderIcon {

@@ -13,7 +13,7 @@ const answer = async () => {
   try {
     let refreshToken = sessionStorage.getItem("refresh");
     const data = await fetch(
-      `https://api.spotify.com/v1/browse/new-releases`, // Fetch Wanted Data
+      `https://api.spotify.com/v1/browse/new-releases?country=DK&limit=20`, // Fetch Wanted Data
       {
         method: "GET",
         headers: {

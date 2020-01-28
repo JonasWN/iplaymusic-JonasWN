@@ -44,7 +44,10 @@ const answer = async () => {
       productClone.querySelector("summary").style.background =
         detailColors[categoriesList.indexOf(genre) % 9];
       productClone.querySelector(".summary__list").classList.add(genre.id);
+      productClone.querySelector(".main__details").classList.add("scale-in-ver-center")
       main.appendChild(productClone);
+
+
 
       // forEach category / fetch that category¨s playlists
       const getPlaylist = async () => {
@@ -93,6 +96,8 @@ const answer = async () => {
       // Ivokes the 2nd fetch for playlists
       getPlaylist();
     });
+
+
 
     document.querySelector("main").style.display = "block";
     document.querySelector(".loader").style.display = "none";

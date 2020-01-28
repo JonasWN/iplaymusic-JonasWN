@@ -35,9 +35,9 @@ const switchTheme = e => {
 if (toggle) {
   toggle.addEventListener("click", switchTheme, false);
 
-  const currentTheme = localStorage.getItem("theme")
-    ? localStorage.getItem("theme")
-    : null;
+  const currentTheme = localStorage.getItem("theme") ?
+    localStorage.getItem("theme") :
+    null;
 
   if (currentTheme) {
     document.documentElement.setAttribute("data-theme", currentTheme);
