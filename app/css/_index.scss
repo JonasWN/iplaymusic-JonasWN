@@ -325,6 +325,10 @@
 
         .searchItem__name {
             font-size: 12pt;
+            color: var(--font-color);
+        }
+
+        .searchItem__nameLink {
             width: 100%;
             margin-left: 5%;
         }

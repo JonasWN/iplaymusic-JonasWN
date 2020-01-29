@@ -58,6 +58,7 @@ const answer = async () => {
     else {
       console.log("playlists");
       featuredList.forEach(item => {
+        // if (item.track.preview_url) {
         let sliderItem = trackCover.content.cloneNode(true);
 
         sliderItem
@@ -68,6 +69,7 @@ const answer = async () => {
           "contrast(1.3) saturate(1.3) brightness(1.1)";
         sliderItem.querySelector("img").style.border = "1px solid #000";
         document.querySelector(".carousel").appendChild(sliderItem);
+        // }
       });
     }
 
@@ -93,6 +95,20 @@ const answer = async () => {
             const result = await data.json();
             // console.log(result);
             flkty.selectCell(parseInt(position));
+
+            if (result.preview_url && result.preview_url !== "null") {
+              audioFile.setAttribute("src", result.preview_url)
+              if (audioVisual.classList.contains("puff-in-center")) {
+                audioFile.play();
+              }
+
+            } else {
+              audioFile.setAttribute("src", "/assets/images/Seinfeld Theme.mp3")
+
+              if (audioVisual.classList.contains("puff-in-center")) {
+                audioFile.play();
+              }
+            }
 
             document.querySelector(".title__heading").textContent = result.name;
             document.querySelector(".title__underTitle").textContent =
@@ -147,7 +163,6 @@ const answer = async () => {
           textWrapper.style.animation = "none";
           textWrapper.offsetHeight; /* trigger reflow */
           textWrapper.style.animation = null;
-
         }
       }
     });
@@ -156,6 +171,9 @@ const answer = async () => {
     targets.forEach(lazyLoad);
     document.querySelector("main").style.display = "block";
     document.querySelector(".loader").style.display = "none";
+
+
+
   } catch (error) {
     console.error(error);
     request();

@@ -252,6 +252,8 @@ a {
       border: 1px solid black; }
     .searchContainer .searchItem .searchItem__name {
       font-size: 12pt;
+      color: var(--font-color); }
+    .searchContainer .searchItem .searchItem__nameLink {
       width: 100%;
       margin-left: 5%; }
 
@@ -1007,7 +1009,7 @@ a {
     height: 50vh; }
 
 .sectionSlider {
-  padding: 1% 5% 3% 5%;
+  padding: 1% 8% 3% 8%;
   width: 100%;
   font-weight: 900; }
   .sectionSlider .sectionSlider__title {

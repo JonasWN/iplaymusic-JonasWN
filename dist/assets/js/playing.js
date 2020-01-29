@@ -37,9 +37,10 @@ backwards.forEach(icon => {
       sliderback.value -= 10;
       console.log(sliderback.value);
     } else {
-      if (sliderback.value == 0) {
+      if (sliderback.value <= 1) {
         // skip to previous song
         console.log("skip to previous song");
+        document.querySelector(".previous").click();
       }
       sliderback.value = 0;
       audioFile.currentTime = 0;
@@ -71,7 +72,7 @@ forwards.forEach(icon => {
       console.log(sliderback.value);
     } else {
       // skip to next song
-      console.log("skip to next song");
+      document.querySelector(".next").click();
     }
   });
 });
@@ -81,13 +82,15 @@ setInterval(() => {
   sliderback.value = (audioFile.currentTime / audioFile.duration) * 100;
   // audioFile.currentTime = sliderback.value / audioFile.duration * 100;
   songMin.textContent = songTime;
+  if (audioFile.currentTime >= 30) {
+    document.querySelector(".next").click();
+  }
 }, 100);
 
-setTimeout(() => {
-  document.querySelector(".songLength__max").textContent = formatTime(
-    audioFile.duration
-  );
-}, 100);
+
+document.querySelector(".songLength__max").textContent = "00:30"
+
+
 
 const play = e => {
   console.log(e.target);
@@ -100,6 +103,7 @@ const play = e => {
     audioVisual.classList.add("puff-in-center");
   }
 };
+
 
 // for (let i = 0; i < playButtons.length; i++) {
 //   playButtons[i].addEventListener("click", play)

@@ -76,7 +76,7 @@ const answer = async () => {
                 "href",
                 `/playlist?name=categories/${genre.id}/playlists&id=${
                   item.id
-                }&position=${playListItems.indexOf(item)}`
+                }&position=${playListItems.indexOf(item)}&theme=_ionicons_svg_ios-microphone`
               );
             playlistClone
               .querySelector("#icon__link")
@@ -84,7 +84,7 @@ const answer = async () => {
                 "href",
                 `/playlist?name=categories/${genre.id}/playlists&id=${
                   item.id
-                }&position=${playListItems.indexOf(item)}`
+                }&position=${playListItems.indexOf(item)}&theme=_ionicons_svg_ios-microphone`
               );
             document.querySelector(`.${genre.id}`).appendChild(playlistClone);
           });
