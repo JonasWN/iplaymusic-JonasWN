@@ -100,6 +100,8 @@ const answer = async () => {
           } catch (error) {}
         },
         change: async function (index) {
+          document.querySelector("#myRange").value = 0;
+          document.querySelector("#myAudio").currentTime = 0;
           const currentSelected = document.querySelector(".is-selected img").id;
           console.log(currentSelected);
           console.log("Slide changed to" + index);
@@ -114,7 +116,25 @@ const answer = async () => {
             }
           );
 
+
           const result = await data.json();
+
+
+          console.log(result)
+          if (result.preview_url && result.preview_url !== "null") {
+            audioFile.setAttribute("src", result.preview_url)
+            if (audioVisual.classList.contains("puff-in-center")) {
+              audioFile.play();
+            }
+
+          } else {
+            audioFile.setAttribute("src", "/assets/images/Seinfeld Theme.mp3")
+
+            if (audioVisual.classList.contains("puff-in-center")) {
+              audioFile.play();
+            }
+          }
+
           let nameStr =
             result.name.slice(0, 18) + (result.name.length > 25 ? "..." : "");
           title.textContent = nameStr;
