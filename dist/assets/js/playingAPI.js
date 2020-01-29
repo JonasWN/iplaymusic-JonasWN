@@ -58,16 +58,18 @@ const answer = async () => {
     else {
       console.log("playlists");
       featuredList.forEach(item => {
-        let sliderItem = trackCover.content.cloneNode(true);
+        if (item.track.preview_url) {
+          let sliderItem = trackCover.content.cloneNode(true);
 
-        sliderItem
-          .querySelector("img")
-          .setAttribute("data-lazy", item.track.album.images[0].url);
-        sliderItem.querySelector("img").id = `${item.track.id}`;
-        sliderItem.querySelector("img").style.filter =
-          "contrast(1.3) saturate(1.3) brightness(1.1)";
-        sliderItem.querySelector("img").style.border = "1px solid #000";
-        document.querySelector(".carousel").appendChild(sliderItem);
+          sliderItem
+            .querySelector("img")
+            .setAttribute("data-lazy", item.track.album.images[0].url);
+          sliderItem.querySelector("img").id = `${item.track.id}`;
+          sliderItem.querySelector("img").style.filter =
+            "contrast(1.3) saturate(1.3) brightness(1.1)";
+          sliderItem.querySelector("img").style.border = "1px solid #000";
+          document.querySelector(".carousel").appendChild(sliderItem);
+        }
       });
     }
 
@@ -93,7 +95,7 @@ const answer = async () => {
             const result = await data.json();
             // console.log(result);
             flkty.selectCell(parseInt(position));
-
+            // audioFile.setAttribute("src", result.preview_url)
             document.querySelector(".title__heading").textContent = result.name;
             document.querySelector(".title__underTitle").textContent =
               result.artists[0].name;
@@ -147,7 +149,6 @@ const answer = async () => {
           textWrapper.style.animation = "none";
           textWrapper.offsetHeight; /* trigger reflow */
           textWrapper.style.animation = null;
-
         }
       }
     });
@@ -156,6 +157,9 @@ const answer = async () => {
     targets.forEach(lazyLoad);
     document.querySelector("main").style.display = "block";
     document.querySelector(".loader").style.display = "none";
+
+
+
   } catch (error) {
     console.error(error);
     request();
