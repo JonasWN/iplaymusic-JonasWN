@@ -26,7 +26,7 @@
 }
 
 .sectionSlider {
-  padding: 1% 5% 5% 5%;
+  padding: 1% 5% 3% 5%;
   // position: absolute;
   // bottom: 0;
   // left: 0;
@@ -45,11 +45,10 @@
   }
 
   .title__underTitle {
-    color: #7dc6ff;
-    font-size: 14pt;
-
+    font-size: 10pt;
     -webkit-animation: text-focus-in 0.3s linear both;
     animation: text-focus-in 0.3s linear both;
+    font-weight: 200;
   }
 
   @keyframes appear {
@@ -71,9 +70,9 @@
 
   .sectionSlider__slider {
     width: 100%;
-    height: 6px;
+    height: 3px;
     background: #ff1168;
-    margin: 25px 0;
+    margin: 20px 0;
     position: relative;
     -webkit-appearance: none;
     border: 1px solid #000;
@@ -148,6 +147,10 @@
   }
 }
 
+.songLength__min {
+  width: 39px;
+}
+
 .main__playingIcon {
   position: relative;
   -webkit-animation: height 0.8s cubic-bezier(0.77, 0, 0.175, 1) both 0.4s;
@@ -161,7 +164,7 @@
 
 #footer__playButton {
   -webkit-transition: all 0.5s ease;
-  width: 20%;
+  width: 60px;
 
   svg {
     width: 100%;
@@ -520,14 +523,14 @@ main .carousel-cell-playing {
   justify-content: center;
   height: 100%;
   display: flex;
-  margin-top: 2%;
+  margin-top: 1%;
   opacity: 0;
   transition: all 0.4s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }
 
 #wave {
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 50px;
   fill: #fff;
 }
 

@@ -961,7 +961,7 @@ a {
     height: 50vh; }
 
 .sectionSlider {
-  padding: 1% 5% 5% 5%;
+  padding: 1% 5% 3% 5%;
   width: 100%;
   font-weight: 900; }
   .sectionSlider .sectionSlider__title {
@@ -971,10 +971,10 @@ a {
       font-size: 15pt;
       font-style: italic; }
   .sectionSlider .title__underTitle {
-    color: #7dc6ff;
-    font-size: 14pt;
+    font-size: 10pt;
     -webkit-animation: text-focus-in 0.3s linear both;
-    animation: text-focus-in 0.3s linear both; }
+    animation: text-focus-in 0.3s linear both;
+    font-weight: 200; }
 
 @keyframes appear {
   0% {
@@ -988,9 +988,9 @@ a {
     opacity: 1; } }
   .sectionSlider .sectionSlider__slider {
     width: 100%;
-    height: 6px;
+    height: 3px;
     background: #ff1168;
-    margin: 25px 0;
+    margin: 20px 0;
     position: relative;
     -webkit-appearance: none;
     border: 1px solid #000; }
@@ -1039,6 +1039,9 @@ a {
     .sectionSlider .playButton path {
       fill: #FF1168; }
 
+.songLength__min {
+  width: 39px; }
+
 .main__playingIcon {
   position: relative;
   -webkit-animation: height 0.8s cubic-bezier(0.77, 0, 0.175, 1) both 0.4s;
@@ -1050,7 +1053,7 @@ a {
 
 #footer__playButton {
   -webkit-transition: all 0.5s ease;
-  width: 20%; }
+  width: 60px; }
   #footer__playButton svg {
     width: 100%;
     height: 100%; }
@@ -1274,13 +1277,13 @@ main .carousel-cell-playing {
   justify-content: center;
   height: 100%;
   display: flex;
-  margin-top: 2%;
+  margin-top: 1%;
   opacity: 0;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
 
 #wave {
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 50px;
   fill: #fff; }
 
 #Line_1 {
