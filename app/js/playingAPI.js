@@ -49,7 +49,7 @@ const answer = async () => {
           .setAttribute("data-lazy", result.images[0].url);
         sliderItem.querySelector("img").id = `${item.id}`;
         sliderItem.querySelector("img").style.filter =
-          "contrast(1.3) saturate(1.2)";
+          "contrast(1.3) saturate(1.3) brightness(1.1)";
         sliderItem.querySelector("img").style.border = "1px solid #000";
         document.querySelector(".carousel").appendChild(sliderItem);
       });
@@ -65,7 +65,7 @@ const answer = async () => {
           .setAttribute("data-lazy", item.track.album.images[0].url);
         sliderItem.querySelector("img").id = `${item.track.id}`;
         sliderItem.querySelector("img").style.filter =
-          "contrast(1.3) saturate(1.2)";
+          "contrast(1.3) saturate(1.3) brightness(1.1)";
         sliderItem.querySelector("img").style.border = "1px solid #000";
         document.querySelector(".carousel").appendChild(sliderItem);
       });
@@ -100,6 +100,8 @@ const answer = async () => {
           } catch (error) {}
         },
         change: async function (index) {
+          document.querySelector("#myRange").value = 0;
+          document.querySelector("#myAudio").currentTime = 0;
           const currentSelected = document.querySelector(".is-selected img").id;
           console.log(currentSelected);
           console.log("Slide changed to" + index);
@@ -114,9 +116,27 @@ const answer = async () => {
             }
           );
 
+
           const result = await data.json();
+
+
+          console.log(result)
+          if (result.preview_url && result.preview_url !== "null") {
+            audioFile.setAttribute("src", result.preview_url)
+            if (audioVisual.classList.contains("puff-in-center")) {
+              audioFile.play();
+            }
+
+          } else {
+            audioFile.setAttribute("src", "/assets/images/Seinfeld Theme.mp3")
+
+            if (audioVisual.classList.contains("puff-in-center")) {
+              audioFile.play();
+            }
+          }
+
           let nameStr =
-            result.name.slice(0, 10) + (result.name.length > 25 ? "..." : "");
+            result.name.slice(0, 18) + (result.name.length > 25 ? "..." : "");
           title.textContent = nameStr;
           title.style.animation = "none";
           title.offsetHeight; /* trigger reflow */

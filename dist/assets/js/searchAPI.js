@@ -3,10 +3,10 @@ const searchField = document.querySelector(".nav__search input")
 
 
 searchIcon.addEventListener("click", () => {
+    searchField.value = null;
     searchIcon.classList.toggle("jello-diagonal-1")
     searchField.classList.toggle("scale-in-hor-right")
     searchField.focus()
-    searchField.value = null
 })
 
 document.querySelector("body").addEventListener("click", (e) => {

@@ -112,28 +112,6 @@ const answer = async () => {
   }
 };
 
-// document.querySelector(".nav__search").addEventListener("keydown", async () => {
-//   let search = document.querySelector(".nav__search input").value
-//   console.log(search)
-//   try {
-//     let refreshToken = sessionStorage.getItem("refresh");
-//     const data = await fetch(
-//       `https://api.spotify.com/v1/search?q=${search}&type=track%2Cartist%2Calbum%2Cplaylist`, // Fetch Wanted Data
-//       {
-//         method: "GET",
-//         headers: {
-//           Authorization: "Bearer " + refreshToken
-//         },
-//         json: true
-//       }
-//     );
-
-//     const result = await data.json();
-//     console.log(result);
-//   } catch {
-
-//   }
-// })
 
 setTimeout(() => {
   const ullist = document.querySelectorAll(".summary__list");
