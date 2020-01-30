@@ -145,7 +145,24 @@
         <p class="main__songCount">3:54</p>
     </li>
 </template>
+<div id="overlay" class="overlay">
 
+</div>
+<ul id="searchContainer" class="searchContainer">
+
+</ul>
+<template id="searchItems">
+    <li class="searchItem">
+        <a href="">
+            <img src="" alt="" class="searchItem__cover">
+        </a>
+        <a href="" class="searchItem__nameLink">
+            <h4 class="searchItem__name"></h4>
+        </a>
+
+        <p class="searchItem__type"></p>
+    </li>
+</template>
 <div class="loader loader-1">
     <div class="loader-outter"></div>
     <div class="loader-inner"></div>
@@ -229,7 +246,7 @@
         <!-- wrapper-ends -->
         </div>
 
-        <!-- <script src="/assets/js/searchAPI.js" defer type="module"></script> -->
+        <script src="/assets/js/searchAPI.js" defer type="module"></script>
         <script src="/assets/js/themeMode.js" defer></script>
         <script src="/assets/js/quicklink.js" defer></script>
         <script src="/assets/js/lazyLoad.js" defer type="module"></script>

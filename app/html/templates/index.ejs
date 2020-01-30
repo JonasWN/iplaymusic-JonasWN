@@ -43,32 +43,13 @@
 
 </main>
 
-<div id="overlay" class="overlay">
-
-</div>
-<ul id="searchContainer" class="searchContainer">
-
-</ul>
-<template id="searchItems">
-    <li class="searchItem">
-        <a href="">
-            <img src="" alt="" class="searchItem__cover">
-        </a>
-        <a href="" class="searchItem__nameLink">
-            <h4 class="searchItem__name"></h4>
-        </a>
-
-        <p class="searchItem__type"></p>
-    </li>
-</template>
-
 <template id="main__template">
     <div class="main__img">
         <a href="/" id="featured__playlistLink"> <img data-lazy="" alt="Featured Playlist cover"></a>
     </div>
 </template>
 
+<% include ../partials/searchOverlay %>
 <% include ../partials/footer %>
 <script src="/assets/js/indexAPI.js" defer type="module"></script>
-<script src="/assets/js/searchAPI.js" defer type="module"></script>
 <% include ../partials/post_footer %>
