@@ -12,9 +12,9 @@ function millisToMinutesAndSeconds(millis) {
   // millis to min / seconds
   const minutes = Math.floor(millis / 60000);
   const seconds = ((millis % 60000) / 1000).toFixed(0);
-  return seconds == 60 ?
-    minutes + 1 + ":00" :
-    minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+  return seconds == 60
+    ? minutes + 1 + ":00"
+    : minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
 
 const answer = async () => {
@@ -56,7 +56,7 @@ const answer = async () => {
       selectedAttraction: 0.1,
       friction: 0.8,
       on: {
-        ready: async function () {
+        ready: async function() {
           console.log("Flickity is ready");
           console.log(document.querySelector(".is-selected"));
           try {
@@ -78,9 +78,12 @@ const answer = async () => {
             flkty.selectCell(parseInt(position));
 
             const tracks = result.tracks.items;
-
-            tracks.forEach(item => {
+            const previewTracks = tracks.filter(
+              song => song.track.preview_url && song.track
+            );
+            previewTracks.forEach(item => {
               if (item.track) {
+                console.log(item.track.preview_url);
                 let productClone = mainClone.content.cloneNode(true);
                 productClone
                   .querySelector("a")
@@ -88,7 +91,7 @@ const answer = async () => {
                     "href",
                     `/playing?name=playlists/${id}&id=${
                       item.track.id
-                    }&position=${tracks.indexOf(item)}`
+                    }&position=${previewTracks.indexOf(item)}`
                   );
                 console.log(name);
                 productClone
@@ -107,7 +110,7 @@ const answer = async () => {
                     "href",
                     `/playing?name=playlists/${id}&id=${
                       item.track.id
-                    }&position=${tracks.indexOf(item)}`
+                    }&position=${previewTracks.indexOf(item)}`
                   );
                 productClone.querySelector(".main__itemText").textContent =
                   item.track.artists[0].name;
@@ -129,7 +132,7 @@ const answer = async () => {
             targets.forEach(lazyLoad);
           } catch (error) {}
         },
-        change: async function (index) {
+        change: async function(index) {
           document.querySelector("main").style.display = "none";
           document.querySelector(".loader").style.display = "block";
           try {
@@ -161,9 +164,11 @@ const answer = async () => {
               result.name;
 
             const tracks = result.tracks.items;
-
+            const previewTracks = tracks.filter(
+              song => song.track.preview_url && song.track
+            );
             //foreach item
-            tracks.forEach(item => {
+            previewTracks.forEach(item => {
               if (item.track) {
                 let productClone = mainClone.content.cloneNode(true);
                 productClone
@@ -172,11 +177,19 @@ const answer = async () => {
                     "href",
                     `/playing?name=playlists/${currentSelected}&id=${
                       item.track.id
-                    }&position=${tracks.indexOf(item)}`
+                    }&position=${previewTracks.indexOf(item)}`
                   );
                 productClone
                   .querySelector(".main__thumb")
                   .setAttribute("data-lazy", item.track.album.images[0].url);
+                productClone
+                  .querySelector(".item__titleLink")
+                  .setAttribute(
+                    "href",
+                    `/playing?name=playlists/${id}&id=${
+                      item.track.id
+                    }&position=${previewTracks.indexOf(item)}`
+                  );
                 let nameString = item.track.name;
                 let nameStr =
                   nameString.slice(0, 12) +

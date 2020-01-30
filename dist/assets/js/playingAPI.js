@@ -15,9 +15,9 @@ function millisToMinutesAndSeconds(millis) {
   // millis to min / seconds
   const minutes = Math.floor(millis / 60000);
   const seconds = ((millis % 60000) / 1000).toFixed(0);
-  return seconds == 60 ?
-    minutes + 1 + ":00" :
-    minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+  return seconds == 60
+    ? minutes + 1 + ":00"
+    : minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
 
 const answer = async () => {
@@ -58,18 +58,18 @@ const answer = async () => {
     else {
       console.log("playlists");
       featuredList.forEach(item => {
-        // if (item.track.preview_url) {
-        let sliderItem = trackCover.content.cloneNode(true);
+        if (item.track.preview_url) {
+          let sliderItem = trackCover.content.cloneNode(true);
 
-        sliderItem
-          .querySelector("img")
-          .setAttribute("data-lazy", item.track.album.images[0].url);
-        sliderItem.querySelector("img").id = `${item.track.id}`;
-        sliderItem.querySelector("img").style.filter =
-          "contrast(1.3) saturate(1.3) brightness(1.1)";
-        sliderItem.querySelector("img").style.border = "1px solid #000";
-        document.querySelector(".carousel").appendChild(sliderItem);
-        // }
+          sliderItem
+            .querySelector("img")
+            .setAttribute("data-lazy", item.track.album.images[0].url);
+          sliderItem.querySelector("img").id = `${item.track.id}`;
+          sliderItem.querySelector("img").style.filter =
+            "contrast(1.3) saturate(1.3) brightness(1.1)";
+          sliderItem.querySelector("img").style.border = "1px solid #000";
+          document.querySelector(".carousel").appendChild(sliderItem);
+        }
       });
     }
 
@@ -79,7 +79,7 @@ const answer = async () => {
       wrapAround: true,
       fade: true,
       on: {
-        ready: async function () {
+        ready: async function() {
           try {
             const data = await fetch(
               `https://api.spotify.com/v1/tracks/${id}`, // Fetch Wanted Data
@@ -97,13 +97,15 @@ const answer = async () => {
             flkty.selectCell(parseInt(position));
 
             if (result.preview_url && result.preview_url !== "null") {
-              audioFile.setAttribute("src", result.preview_url)
+              audioFile.setAttribute("src", result.preview_url);
               if (audioVisual.classList.contains("puff-in-center")) {
                 audioFile.play();
               }
-
             } else {
-              audioFile.setAttribute("src", "/assets/images/Seinfeld Theme.mp3")
+              audioFile.setAttribute(
+                "src",
+                "/assets/images/Seinfeld Theme.mp3"
+              );
 
               if (audioVisual.classList.contains("puff-in-center")) {
                 audioFile.play();
@@ -115,7 +117,7 @@ const answer = async () => {
               result.artists[0].name;
           } catch (error) {}
         },
-        change: async function (index) {
+        change: async function(index) {
           document.querySelector("#myRange").value = 0;
           document.querySelector("#myAudio").currentTime = 0;
           const currentSelected = document.querySelector(".is-selected img").id;
@@ -132,19 +134,16 @@ const answer = async () => {
             }
           );
 
-
           const result = await data.json();
 
-
-          console.log(result)
+          console.log(result);
           if (result.preview_url && result.preview_url !== "null") {
-            audioFile.setAttribute("src", result.preview_url)
+            audioFile.setAttribute("src", result.preview_url);
             if (audioVisual.classList.contains("puff-in-center")) {
               audioFile.play();
             }
-
           } else {
-            audioFile.setAttribute("src", "/assets/images/Seinfeld Theme.mp3")
+            audioFile.setAttribute("src", "/assets/images/Seinfeld Theme.mp3");
 
             if (audioVisual.classList.contains("puff-in-center")) {
               audioFile.play();
@@ -171,9 +170,6 @@ const answer = async () => {
     targets.forEach(lazyLoad);
     document.querySelector("main").style.display = "block";
     document.querySelector(".loader").style.display = "none";
-
-
-
   } catch (error) {
     console.error(error);
     request();
