@@ -995,7 +995,7 @@ a {
     cursor: pointer; }
 
 .playing {
-  overflow: hidden;
+  overflow-x: hidden;
   background: #101218;
   display: grid;
   grid-template-columns: 1fr;
