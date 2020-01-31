@@ -875,7 +875,8 @@ a {
   .main__playList .main__title_playlist {
     text-align: center;
     margin-bottom: 40px;
-    color: var(--font-color); }
+    color: var(--font-color);
+    font-size: 15pt; }
 
 .main__itemText {
   font-size: 12px; }
@@ -1123,7 +1124,7 @@ a {
     stroke-dashoffset: 0;
     opacity: 1;
     stroke: #f8aa28;
-    animation: nudge 300ms ease-in-out both 200ms alternate;
+    animation: nudge 300ms ease-in-out both 300ms alternate;
     stroke: #ff1168;
     transition: all 0.4s ease-in-out;
     stroke-dasharray: 290; }
@@ -1458,16 +1459,30 @@ main .carousel-cell-playing {
   animation: puff-in-center 0.4s cubic-bezier(0.47, 0, 0.745, 0.715) both; }
 
 :root {
-  --primary-color: #FF1168;
+  --primary-color: #ff1168;
   --font-color: #fff;
-  --bg-color: #101010;
-  --heading-color: linear-gradient(to right, #ee0979, #fc1c62, #ff364a, #ff512f, #ff6a00); }
+  --bg-color: #101218;
+  --heading-color: linear-gradient(
+    to right,
+    #ee0979,
+    #fc1c62,
+    #ff364a,
+    #ff512f,
+    #ff6a00
+  ); }
 
 [data-theme="light"] {
-  --primary-color: #FF1168;
+  --primary-color: #ff1168;
   --font-color: #341931;
   --bg-color: #fff;
-  --heading-color: linear-gradient(to right, #ee0979, #fc1c62, #ff364a, #ff512f, #ff6a00); }
+  --heading-color: linear-gradient(
+    to right,
+    #ee0979,
+    #fc1c62,
+    #ff364a,
+    #ff512f,
+    #ff6a00
+  ); }
 
 @-webkit-keyframes loader-1-outter {
   0% {

@@ -8,7 +8,7 @@ const id = paramsID.get("id");
 const name = paramsID.get("name");
 const position = paramsID.get("position");
 
-document.querySelector("body").style.height = "150vh";
+document.querySelector("body").style.height = "125vh";
 
 function millisToMinutesAndSeconds(millis) {
   // millis to min / seconds
@@ -165,48 +165,44 @@ const answer = async () => {
               result.name;
 
             const tracks = result.tracks.items;
+            console.log(tracks);
             const previewTracks = tracks.filter(
               song => song.track.preview_url && song.track
             );
             //foreach item
             previewTracks.forEach(item => {
-              if (item.track) {
-                let productClone = mainClone.content.cloneNode(true);
-                productClone
-                  .querySelector("a")
-                  .setAttribute(
-                    "href",
-                    `/playing?name=playlists/${currentSelected}&id=${
-                      item.track.id
-                    }&position=${previewTracks.indexOf(item)}`
-                  );
-                productClone
-                  .querySelector(".main__thumb")
-                  .setAttribute("data-lazy", item.track.album.images[0].url);
-                productClone
-                  .querySelector(".item__titleLink")
-                  .setAttribute(
-                    "href",
-                    `/playing?name=playlists/${id}&id=${
-                      item.track.id
-                    }&position=${previewTracks.indexOf(item)}`
-                  );
-                let nameString = item.track.name;
-                let nameStr =
-                  nameString.slice(0, 12) +
-                  (nameString.length > 15 ? "..." : "");
-                productClone.querySelector(
-                  ".main__itemHeader"
-                ).textContent = nameStr;
-                productClone.querySelector(".main__itemText").textContent =
-                  item.track.artists[0].name;
-                productClone.querySelector(
-                  ".main__songCount"
-                ).textContent = millisToMinutesAndSeconds(
-                  item.track.duration_ms
+              let productClone = mainClone.content.cloneNode(true);
+              productClone
+                .querySelector("a")
+                .setAttribute(
+                  "href",
+                  `/playing?name=playlists/${currentSelected}&id=${
+                    item.track.id
+                  }&position=${previewTracks.indexOf(item)}`
                 );
-                main.appendChild(productClone);
-              }
+              productClone
+                .querySelector(".main__thumb")
+                .setAttribute("data-lazy", item.track.album.images[0].url);
+              productClone
+                .querySelector(".item__titleLink")
+                .setAttribute(
+                  "href",
+                  `/playing?name=playlists/${id}&id=${
+                    item.track.id
+                  }&position=${previewTracks.indexOf(item)}`
+                );
+              let nameString = item.track.name;
+              let nameStr =
+                nameString.slice(0, 12) + (nameString.length > 15 ? "..." : "");
+              productClone.querySelector(
+                ".main__itemHeader"
+              ).textContent = nameStr;
+              productClone.querySelector(".main__itemText").textContent =
+                item.track.artists[0].name;
+              productClone.querySelector(
+                ".main__songCount"
+              ).textContent = millisToMinutesAndSeconds(item.track.duration_ms);
+              main.appendChild(productClone);
             });
             document.querySelector("main").style.display = "block";
             document.querySelector(".loader").style.display = "none";
