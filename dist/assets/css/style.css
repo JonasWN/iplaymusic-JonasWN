@@ -285,7 +285,7 @@ a {
 .footer__fixed {
   background: var(--bg-color);
   position: fixed;
-  height: 70px;
+  height: 65px;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -310,6 +310,7 @@ a {
       justify-content: center;
       align-items: center;
       background: linear-gradient(to right, #ee0979, #fc1c62, #ff364a, #ff512f, #ff6a00);
+      margin: 0;
       transition: all 400ms linear; }
     .footer__fixed .footer__list .wifi__current {
       background: var(--font-color); }
@@ -455,6 +456,9 @@ a {
     transform: scaleX(1);
     -webkit-transform-origin: 0% 0%;
     transform-origin: 0% 0%; } }
+
+.footer__item {
+  margin-top: 10px; }
 
 .progress-container {
   width: 80%;

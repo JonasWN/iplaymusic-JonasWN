@@ -64,7 +64,7 @@ setTimeout(
   (window.onscroll = function() {
     scrollProgress();
   }),
-  200
+  300
 );
 
 function scrollProgress() {
