@@ -35,9 +35,9 @@ const switchTheme = e => {
 if (toggle) {
   toggle.addEventListener("click", switchTheme, false);
 
-  const currentTheme = localStorage.getItem("theme") ?
-    localStorage.getItem("theme") :
-    null;
+  const currentTheme = localStorage.getItem("theme")
+    ? localStorage.getItem("theme")
+    : null;
 
   if (currentTheme) {
     document.documentElement.setAttribute("data-theme", currentTheme);
@@ -58,4 +58,20 @@ if (item) {
 }
 if (wifi) {
   wifi.style.background = "var(--font-color)";
+}
+
+setTimeout(
+  (window.onscroll = function() {
+    scrollProgress();
+  }),
+  200
+);
+
+function scrollProgress() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
 }
