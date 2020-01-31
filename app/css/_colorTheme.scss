@@ -1,14 +1,28 @@
 :root {
-    --primary-color: #FF1168;
-    --font-color: #fff;
-    // --bg-color: #182041;
-    --bg-color: #101010;
-    --heading-color: linear-gradient(to right, #ee0979, #fc1c62, #ff364a, #ff512f, #ff6a00);
+  --primary-color: #ff1168;
+  --font-color: #fff;
+  // --bg-color: #182041;
+  --bg-color: #101218;
+  --heading-color: linear-gradient(
+    to right,
+    #ee0979,
+    #fc1c62,
+    #ff364a,
+    #ff512f,
+    #ff6a00
+  );
 }
 
 [data-theme="light"] {
-    --primary-color: #FF1168;
-    --font-color: #341931;
-    --bg-color: #fff;
-    --heading-color: linear-gradient(to right, #ee0979, #fc1c62, #ff364a, #ff512f, #ff6a00);
+  --primary-color: #ff1168;
+  --font-color: #341931;
+  --bg-color: #fff;
+  --heading-color: linear-gradient(
+    to right,
+    #ee0979,
+    #fc1c62,
+    #ff364a,
+    #ff512f,
+    #ff6a00
+  );
 }

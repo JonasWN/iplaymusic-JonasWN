@@ -104,6 +104,12 @@ document
                 "href",
                 `/playing?name=albums/${item.album.id}&id=${item.id}`
               );
+            searchClone
+              .querySelector(".searchItem__nameLink")
+              .setAttribute(
+                "href",
+                `/playing?name=albums/${item.album.id}&id=${item.id}`
+              );
           } else {
             searchClone
               .querySelector("img")
