@@ -4,7 +4,7 @@
     background: var(--bg-color);
     position: fixed;
 
-    height: 70px;
+    height: 65px;
 
     bottom: 0;
     left: 0;
@@ -38,7 +38,7 @@
             justify-content: center;
             align-items: center;
             background: linear-gradient(to right, #ee0979, #fc1c62, #ff364a, #ff512f, #ff6a00);
-
+            margin: 0;
             transition: all 400ms linear;
         }
 
@@ -271,7 +271,9 @@
     }
 }
 
-
+.footer__item {
+    margin-top: 10px;
+}
 
 
 .progress-container {
