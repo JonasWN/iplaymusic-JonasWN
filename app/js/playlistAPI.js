@@ -8,6 +8,8 @@ const id = paramsID.get("id");
 const name = paramsID.get("name");
 const position = paramsID.get("position");
 
+document.querySelector("body").style.height = "150vh";
+
 function millisToMinutesAndSeconds(millis) {
   // millis to min / seconds
   const minutes = Math.floor(millis / 60000);
@@ -140,7 +142,6 @@ const answer = async () => {
             const currentSelected = document.querySelector(".is-selected img")
               .className;
             const liRemove = document.querySelectorAll(".main__item");
-
             for (let i = 0; i < liRemove.length; i++) {
               liRemove[i].remove();
             }

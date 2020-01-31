@@ -999,7 +999,8 @@ a {
   background: #101218;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: minmax(0px, 500px) 1fr; }
+  grid-template-rows: minmax(0px, 500px) 1fr;
+  min-height: calc(100vh - 56px); }
 
 .main__playingIcon {
   overflow: hidden; }

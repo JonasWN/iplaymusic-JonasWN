@@ -1,19 +1,13 @@
 @import "base";
 
 .playing {
-  // background: url("/assets/images/pexels-photo-1771305.png");
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-attachment: fixed;
   overflow-x: hidden;
   background: #101218;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: minmax(0px, 500px) 1fr;
+  min-height: calc(100vh - 56px);
 }
-
-.Title__header {}
 
 .main__playingIcon {
   overflow: hidden;
