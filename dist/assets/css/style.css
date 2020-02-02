@@ -253,6 +253,10 @@ a {
     .searchContainer .searchItem .searchItem__name {
       font-size: 12pt;
       color: var(--font-color); }
+    .searchContainer .searchItem .searchItem__artist {
+      font-size: 10pt;
+      color: var(--font-color);
+      font-weight: 200; }
     .searchContainer .searchItem .searchItem__nameLink {
       width: 100%;
       margin-left: 5%; }
@@ -518,7 +522,6 @@ a {
     .gallery__section .gallery__list .gallery__item {
       width: 150px;
       min-width: 150px;
-      height: 130px;
       overflow: hidden;
       margin-right: 10px;
       border: 1px solid #000000ba; }
@@ -1017,7 +1020,7 @@ a {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: minmax(0px, 500px) 1fr;
-  min-height: calc(100vh - 56px); }
+  height: calc(100vh - 56px); }
 
 .main__playingIcon {
   overflow: hidden; }

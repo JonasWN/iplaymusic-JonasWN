@@ -3,6 +3,7 @@ import lazyLoad from "/assets/js/lazyLoad.js";
 
 const main = document.querySelector(".main__songsList");
 const mainClone = document.querySelector("#mainTemplate");
+const listenAll = document.querySelector(".main__listenAll");
 const paramsID = new URLSearchParams(window.location.search);
 const id = paramsID.get("id");
 const name = paramsID.get("name");
@@ -125,6 +126,12 @@ const answer = async () => {
               }
             });
 
+            listenAll.setAttribute(
+              "href",
+              `/playing?name=playlists/${id}&id=${
+                previewTracks[0].track.id
+              }&position=${previewTracks.indexOf(0)}`
+            );
             document.querySelector(".main__title_playlist").textContent =
               result.name;
             document.querySelector("main").style.display = "block";
@@ -204,6 +211,11 @@ const answer = async () => {
               ).textContent = millisToMinutesAndSeconds(item.track.duration_ms);
               main.appendChild(productClone);
             });
+
+            listenAll.setAttribute(
+              "href",
+              `/playing?name=playlists/${currentSelected}&id=${previewTracks[0].track.id}&position=0`
+            );
             document.querySelector("main").style.display = "block";
             document.querySelector(".loader").style.display = "none";
             const targets = document.querySelectorAll("img");
@@ -211,7 +223,6 @@ const answer = async () => {
           } catch {}
 
           document.querySelector(".is-selected").style.display = "block";
-
           document.querySelector("main").style.display = "block";
           document.querySelector(".loader").style.display = "none";
         }

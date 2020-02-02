@@ -6,8 +6,8 @@ const lazyLoad = target => {
 
         const img = entry.target;
         const src = img.getAttribute("data-lazy");
-
         img.setAttribute("src", src);
+
         if (img.classList.contains("main__thumb")) {
           img.parentElement.classList.add("scale-up-center");
         }
