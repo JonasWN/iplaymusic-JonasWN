@@ -328,6 +328,12 @@
             color: var(--font-color);
         }
 
+        .searchItem__artist {
+            font-size: 10pt;
+            color: var(--font-color);
+            font-weight: 200;
+        }
+
         .searchItem__nameLink {
             width: 100%;
             margin-left: 5%;
